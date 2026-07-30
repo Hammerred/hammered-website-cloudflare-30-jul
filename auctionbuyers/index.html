@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auction Buyers Club | 24 members. £18m bought, £15m sold.</title>
+<meta name="description" content="A capped community of 24 UK investors who buy at auction. Members bought £18m and sold £15m of property last year. Twice-weekly deal reviews, over 1,000 lots assessed a year. Established 2020.">
+<meta property="og:title" content="Auction Buyers Club">
+<meta property="og:description" content="24 members. £18m bought and £15m sold at auction in the last twelve months. Bring any lot to the room before you bid on it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://auctionbuyers.club">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0D1626;
+  --navy:#1F355E;
+  --navy-soft:#2A4573;
+  --gold:#C89A2B;
+  --gold-bright:#E4B84C;
+  --brick:#B34A3A;
+  --paper:#F1F0EC;
+  --paper-lift:#FAFAF9;
+  --line-dark:rgba(255,255,255,.16);
+  --line-light:rgba(13,22,38,.14);
+  --display:'Anton',Impact,sans-serif;
+  --body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --wrap:1180px;
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px}
+
+.abc-wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+
+/* ---------- type ---------- */
+.abc-display{
+  font-family:var(--display);font-weight:400;text-transform:uppercase;
+  line-height:.94;letter-spacing:.005em;margin:0;
+}
+.abc-eyebrow{
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;margin:0 0 22px;
+}
+.abc-eyebrow--gold{color:var(--gold)}
+.abc-eyebrow--navy{color:var(--navy);opacity:.75}
+.abc-lede{font-size:clamp(18px,2vw,21px);line-height:1.6;max-width:62ch}
+.abc-fig{font-family:var(--mono);font-weight:600;font-variant-numeric:tabular-nums}
+
+/* ---------- nav ---------- */
+.abc-nav{
+  position:sticky;top:0;z-index:60;background:var(--ink);
+  border-bottom:1px solid var(--line-dark);
+}
+.abc-nav__in{
+  max-width:var(--wrap);margin:0 auto;padding:14px var(--gut);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.abc-nav__mark{
+  font-family:var(--display);text-transform:uppercase;color:#fff;
+  font-size:19px;letter-spacing:.03em;text-decoration:none;line-height:1;
+}
+.abc-nav__mark span{color:var(--gold)}
+.abc-nav__links{display:flex;align-items:center;gap:28px}
+.abc-nav__link{
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);text-decoration:none;
+}
+.abc-nav__link:hover{color:#fff}
+@media(max-width:720px){.abc-nav__link{display:none}}
+
+/* ---------- buttons ---------- */
+.abc-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;
+  padding:15px 26px;border:1px solid transparent;cursor:pointer;
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.abc-btn--gold{background:var(--gold);color:var(--ink)}
+.abc-btn--gold:hover{background:var(--gold-bright)}
+.abc-btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.abc-btn--ghost:hover{border-color:var(--gold);color:var(--gold)}
+.abc-btn__arrow{font-family:var(--body);font-size:16px;line-height:1}
+
+/* ---------- hero ---------- */
+.abc-hero{background:var(--ink);color:#fff;padding:clamp(64px,10vw,120px) 0 0}
+.abc-hero__grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,80px);align-items:end}
+@media(max-width:900px){.abc-hero__grid{grid-template-columns:1fr;align-items:start}}
+.abc-hero__h1{font-size:clamp(46px,8.4vw,108px);color:#fff}
+.abc-hero__h1 em{font-style:normal;color:var(--gold);display:block}
+.abc-hero__sub{margin:32px 0 0;font-size:clamp(17px,1.7vw,20px);line-height:1.6;color:rgba(255,255,255,.82);max-width:52ch}
+.abc-hero__meta{
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin-top:26px;line-height:1.9;
+}
+.abc-hero__meta a{color:rgba(255,255,255,.85)}
+.abc-hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:38px}
+.abc-hero__places{
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);
+}
+.abc-hero__stats{
+  border-left:1px solid var(--line-dark);padding-left:clamp(24px,3vw,40px);
+  display:grid;gap:26px;
+}
+@media(max-width:900px){.abc-hero__stats{border-left:0;padding-left:0;border-top:1px solid var(--line-dark);padding-top:34px;grid-template-columns:repeat(3,1fr);gap:18px}}
+@media(max-width:560px){.abc-hero__stats{grid-template-columns:1fr 1fr}}
+.abc-stat__n{font-family:var(--mono);font-weight:600;font-size:clamp(26px,3.4vw,38px);color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+.abc-stat__l{font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.58);margin-top:9px;line-height:1.5}
+
+/* ---------- ticker (signature) ---------- */
+.abc-ticker{
+  background:var(--navy);border-top:1px solid var(--line-dark);
+  border-bottom:1px solid var(--line-dark);
+  overflow:hidden;margin-top:clamp(56px,8vw,96px);
+}
+.abc-ticker__label{
+  background:var(--gold);color:var(--ink);font-family:var(--mono);font-weight:600;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:7px var(--gut);
+}
+.abc-ticker__track{display:flex;width:max-content;animation:abc-slide 62s linear infinite}
+.abc-ticker:hover .abc-ticker__track{animation-play-state:paused}
+@keyframes abc-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.abc-ticker__row{display:flex;flex-shrink:0}
+.abc-lot{
+  display:flex;align-items:center;gap:14px;padding:16px 30px;
+  border-right:1px solid var(--line-dark);white-space:nowrap;
+  font-family:var(--mono);font-size:13px;color:rgba(255,255,255,.72);
+}
+.abc-lot__no{color:var(--gold);font-weight:600}
+.abc-lot__v{font-weight:600;font-size:11px;letter-spacing:.1em;padding:3px 9px}
+.abc-lot__v--no{background:rgba(179,74,58,.22);color:#F09A8B}
+.abc-lot__v--yes{background:rgba(200,154,43,.2);color:var(--gold-bright)}
+@media(prefers-reduced-motion:reduce){
+  .abc-ticker__track{animation:none;width:100%;overflow-x:auto}
+  .abc-ticker__row:last-child{display:none}
+}
+
+/* ---------- generic bands ---------- */
+.abc-band{padding:clamp(72px,10vw,128px) 0}
+.abc-band--paper{background:var(--paper)}
+.abc-band--lift{background:var(--paper-lift);border-top:1px solid var(--line-light);border-bottom:1px solid var(--line-light)}
+.abc-band--dark{background:var(--ink);color:#fff}
+.abc-band--navy{background:var(--navy);color:#fff}
+
+.abc-h2{font-size:clamp(34px,5.4vw,68px);max-width:19ch}
+.abc-h2--wide{max-width:26ch}
+.abc-h2 em{font-style:normal;color:var(--gold)}
+
+/* ---------- video ---------- */
+.abc-video__intro{max-width:56ch;margin:0 0 40px;font-size:clamp(18px,2vw,22px);line-height:1.55}
+.abc-video__frame{position:relative;padding-top:56.25%;background:var(--ink);border:1px solid var(--line-light)}
+.abc-video__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- product / tuesday ---------- */
+.abc-prod__head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:end}
+@media(max-width:880px){.abc-prod__head{grid-template-columns:1fr}}
+.abc-prod__note{border-left:2px solid var(--gold);padding-left:22px;font-size:17px;line-height:1.6}
+.abc-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:clamp(44px,6vw,72px);background:var(--line-light)}
+@media(max-width:760px){.abc-split{grid-template-columns:1fr}}
+.abc-split__col{background:var(--paper-lift);padding:clamp(28px,4vw,44px)}
+.abc-split__col--dark{background:var(--ink);color:#fff}
+.abc-split__t{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin:0 0 22px}
+.abc-list{list-style:none;margin:0;padding:0}
+.abc-list li{padding:13px 0 13px 28px;position:relative;border-top:1px solid var(--line-light);font-size:16.5px;line-height:1.55}
+.abc-split__col--dark .abc-list li{border-top-color:var(--line-dark)}
+.abc-list li:first-child{border-top:0}
+.abc-list li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:1px;background:var(--gold)}
+.abc-body-copy p{max-width:64ch;font-size:17.5px;line-height:1.7}
+.abc-pull{
+  font-family:var(--display);text-transform:uppercase;font-size:clamp(24px,3.6vw,42px);
+  line-height:1.06;margin:clamp(44px,6vw,72px) 0 0;max-width:20ch;
+}
+.abc-pull em{font-style:normal;color:var(--gold)}
+
+/* ---------- proof ---------- */
+.abc-proof__banner{
+  border:1px solid var(--line-dark);padding:clamp(28px,4vw,48px);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);
+  margin-bottom:clamp(48px,6vw,80px);
+}
+@media(max-width:760px){.abc-proof__banner{grid-template-columns:1fr;gap:26px}}
+.abc-proof__n{font-family:var(--mono);font-weight:600;font-size:clamp(32px,5vw,54px);color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+.abc-proof__l{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:12px;line-height:1.6}
+.abc-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line-dark)}
+@media(max-width:760px){.abc-cards{grid-template-columns:1fr}}
+.abc-card{background:var(--ink);padding:clamp(26px,3.4vw,40px)}
+.abc-card__who{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
+.abc-card__h{font-family:var(--display);text-transform:uppercase;font-size:clamp(21px,2.6vw,30px);line-height:1.08;margin:0 0 16px}
+.abc-card p{color:rgba(255,255,255,.78);font-size:16.5px;margin:0 0 14px}
+.abc-card q{display:block;color:#fff;font-size:17px;line-height:1.55;border-left:2px solid var(--gold);padding-left:18px;margin-top:20px;quotes:none}
+.abc-card--feature{grid-column:1/-1;background:var(--navy)}
+.abc-card--feature .abc-card__h{font-size:clamp(24px,3.4vw,40px);max-width:22ch}
+
+/* ---------- included grid ---------- */
+.abc-inc{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line-light);margin-top:clamp(44px,6vw,64px)}
+@media(max-width:900px){.abc-inc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.abc-inc{grid-template-columns:1fr}}
+.abc-inc__cell{background:var(--paper-lift);padding:clamp(24px,3vw,34px);min-height:200px}
+.abc-inc__h{font-family:var(--display);text-transform:uppercase;font-size:20px;line-height:1.12;margin:0 0 14px}
+.abc-inc__cell p{margin:0;font-size:16px;line-height:1.6;color:rgba(13,22,38,.78)}
+.abc-inc__cell small{display:block;margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:rgba(13,22,38,.5);line-height:1.6}
+
+/* ---------- criteria ---------- */
+.abc-crit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media(max-width:860px){.abc-crit{grid-template-columns:1fr}}
+.abc-crit__item{border-top:1px solid var(--line-dark);padding:24px 0}
+.abc-crit__item:first-child{border-top:0;padding-top:0}
+.abc-crit__h{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.abc-crit__item p{margin:0;color:rgba(255,255,255,.8);font-size:16.5px;line-height:1.62}
+
+/* ---------- steps (a real sequence, so numbering earns its place) ---------- */
+.abc-steps{counter-reset:abcstep;margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--line-light)}
+.abc-step{
+  counter-increment:abcstep;display:grid;grid-template-columns:70px 1fr;
+  gap:clamp(16px,3vw,36px);padding:26px 0;border-bottom:1px solid var(--line-light);
+}
+@media(max-width:600px){.abc-step{grid-template-columns:44px 1fr;gap:16px}}
+.abc-step::before{
+  content:counter(abcstep,decimal-leading-zero);
+  font-family:var(--mono);font-weight:600;font-size:14px;color:var(--gold);
+  letter-spacing:.06em;padding-top:5px;
+}
+.abc-step__h{font-family:var(--display);text-transform:uppercase;font-size:clamp(19px,2.2vw,26px);line-height:1.1;margin:0 0 8px}
+.abc-step p{margin:0;font-size:16.5px;line-height:1.6;color:rgba(13,22,38,.78);max-width:60ch}
+
+/* ---------- apply ---------- */
+.abc-apply{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,6vw,80px);align-items:start}
+@media(max-width:900px){.abc-apply{grid-template-columns:1fr}}
+.abc-apply__note{
+  font-family:var(--mono);font-size:13px;line-height:1.85;color:rgba(255,255,255,.62);
+  border-top:1px solid var(--line-dark);padding-top:22px;margin-top:30px;
+}
+.abc-form{display:grid;gap:16px}
+.abc-field{display:grid;gap:7px}
+.abc-field label{font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.abc-field input,.abc-field select,.abc-field textarea{
+  width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.22);
+  color:#fff;font-family:var(--body);font-size:16px;padding:13px 15px;border-radius:0;
+}
+.abc-field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;background-size:6px 6px;background-repeat:no-repeat}
+.abc-field input:focus,.abc-field select:focus,.abc-field textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.08)}
+.abc-field input::placeholder,.abc-field textarea::placeholder{color:rgba(255,255,255,.35)}
+.abc-form__row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.abc-form__row{grid-template-columns:1fr}}
+.abc-form__submit{margin-top:8px;justify-self:start;border:0}
+.abc-form__small{font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.45);line-height:1.7;margin:6px 0 0}
+
+/* ---------- footer ---------- */
+.abc-foot{background:var(--ink);color:rgba(255,255,255,.5);border-top:1px solid var(--line-dark);padding:40px 0}
+.abc-foot__in{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+.abc-foot a{color:rgba(255,255,255,.72);text-decoration:none}
+.abc-foot a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="abc-nav">
+  <div class="abc-nav__in">
+    <a class="abc-nav__mark" href="#top">Auction Buyers <span>Club</span></a>
+    <div class="abc-nav__links">
+      <a class="abc-nav__link" href="#tuesday">The calls</a>
+      <a class="abc-nav__link" href="#proof">Members</a>
+      <a class="abc-nav__link" href="#included">What's included</a>
+      <a class="abc-nav__link" href="#criteria">Who it's for</a>
+      <a class="abc-btn abc-btn--gold" href="#apply">Apply <span class="abc-btn__arrow">&rarr;</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="abc-hero" id="top">
+  <div class="abc-wrap">
+    <div class="abc-hero__grid">
+      <div>
+        <p class="abc-eyebrow abc-eyebrow--gold">Established 2020 · Capped at 24 members</p>
+        <h1 class="abc-display abc-hero__h1">£18m bought.<em>£15m sold.</em>24 members.</h1>
+        <p class="abc-hero__sub">A room of investors who buy at auction for a living, and a place you can bring any lot to, twice a week, before you bid on it.</p>
+        <div class="abc-hero__cta">
+          <a class="abc-btn abc-btn--gold" href="#apply">Apply for membership <span class="abc-btn__arrow">&rarr;</span></a>
+          <!-- REPLACE [X] with the live number of open places -->
+          <span class="abc-hero__places">[X] places currently open</span>
+        </div>
+        <p class="abc-hero__meta">
+          Led by <a href="https://www.linkedin.com/in/jay-howard/">Jay Howard</a> and <a href="https://www.linkedin.com/in/piotr-rusinek/">Piotr Rusinek</a><br>
+          Authors of <em>Before The Hammer Falls</em>
+        </p>
+      </div>
+      <div class="abc-hero__stats">
+        <div>
+          <div class="abc-stat__n">1,000+</div>
+          <div class="abc-stat__l">Auction lots reviewed<br>by the room each year</div>
+        </div>
+        <div>
+          <div class="abc-stat__n">2&times;</div>
+          <div class="abc-stat__l">Deal review calls<br>every week</div>
+        </div>
+        <div>
+          <div class="abc-stat__n">24</div>
+          <div class="abc-stat__l">Members. No more,<br>by design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNATURE: lot ticker.
+       ⚠ THESE ARE ILLUSTRATIVE PLACEHOLDERS. Replace with real anonymised lots
+       and the verdict the room actually gave. Keep the format: lot, location, guide, verdict. -->
+  <div class="abc-ticker" aria-label="Recent lots reviewed on the calls">
+    <div class="abc-ticker__label">Recently on the call</div>
+    <div class="abc-ticker__track">
+      <div class="abc-ticker__row">
+        <div class="abc-lot"><span class="abc-lot__no">Lot 12</span> Terrace, Oldham <span>Guide £62,000</span> <span class="abc-lot__v abc-lot__v--no">Walk away</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 47</span> Semi, Nottingham <span>Guide £145,000</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £171k</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 3</span> Retail unit, Leeds <span>Guide £210,000</span> <span class="abc-lot__v abc-lot__v--no">Lease too short</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 88</span> Flat, Cardiff <span>Guide £84,000</span> <span class="abc-lot__v abc-lot__v--no">Unmortgageable</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 26</span> HMO, Sheffield <span>Guide £190,000</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £228k</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 55</span> Land, Kent <span>Guide £95,000</span> <span class="abc-lot__v abc-lot__v--no">No access rights</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 9</span> Cottage, Devon <span>Guide £160,000</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £184k</span></div>
+      </div>
+      <div class="abc-ticker__row" aria-hidden="true">
+        <div class="abc-lot"><span class="abc-lot__no">Lot 12</span> Terrace, Oldham <span>Guide £62,000</span> <span class="abc-lot__v abc-lot__v--no">Walk away</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 47</span> Semi, Nottingham <span>Guide £145,000</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £171k</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 3</span> Retail unit, Leeds <span>Guide £210,000</span> <span class="abc-lot__v abc-lot__v--no">Lease too short</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 88</span> Flat, Cardiff <span>Guide £84,000</span> <span class="abc-lot__v abc-lot__v--no">Unmortgageable</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 26</span> HMO, Sheffield <span>Guide £190,000</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £228k</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 55</span> Land, Kent <span>Guide £95,000</span> <span class="abc-lot__v abc-lot__v--no">No access rights</span></div>
+        <div class="abc-lot"><span class="abc-lot__no">Lot 9</span> Cottage, Devon <span>Guide £160,000</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £184k</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ VIDEO ============ -->
+<section class="abc-band abc-band--paper">
+  <div class="abc-wrap">
+    <p class="abc-eyebrow abc-eyebrow--navy">The members, in their own words</p>
+    <p class="abc-video__intro">You'll get a better sense of this from the people in the room than from anything we write.</p>
+    <div class="abc-video__frame">
+      <!-- Existing Vimeo embed retained -->
+      <iframe src="https://player.vimeo.com/video/1021268334?h=9279fbbc63&title=0" title="Auction Buyers Club" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PRODUCT ============ -->
+<section class="abc-band abc-band--lift" id="tuesday">
+  <div class="abc-wrap">
+    <div class="abc-prod__head">
+      <div>
+        <p class="abc-eyebrow abc-eyebrow--navy">Tuesday and Thursday, 8:45am</p>
+        <h2 class="abc-display abc-h2">We review over <em>1,000</em> auction lots a year. Most buyers manage five.</h2>
+      </div>
+      <p class="abc-prod__note">Ten to fifteen lots a call. Two calls a week. Every week. Not a webinar and not a lecture. A room of active buyers going through real properties that real people are about to bid on.</p>
+    </div>
+
+    <div class="abc-split">
+      <div class="abc-split__col">
+        <p class="abc-split__t">You bring a lot</p>
+        <ul class="abc-list">
+          <li>Something you found in this cycle's catalogue</li>
+          <li>A deal you can't make your mind up about</li>
+          <li>One you're already committed to and want checked</li>
+          <li>Or nothing at all, and you still get fourteen others</li>
+        </ul>
+      </div>
+      <div class="abc-split__col abc-split__col--dark">
+        <p class="abc-split__t">We tell you straight</p>
+        <ul class="abc-list">
+          <li>Whether it's a good deal, or whether you walk away</li>
+          <li>What it's actually worth, not what the guide suggests</li>
+          <li>What it's going to need, and what that will cost</li>
+          <li>What to bid, and how to structure the offer</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="abc-body-copy" style="margin-top:clamp(44px,6vw,72px)">
+      <p>Then you listen to us do the same for everyone else's. Fourteen more properties you would never have looked at, priced and pulled apart in front of you, by people with capital in the market this month.</p>
+      <p>A buyer working alone properly assesses maybe five to ten lots a year. A member sits through a thousand, and when one of them buys, they come back and tell the room what actually happened.</p>
+      <p>You're not here to learn how auctions work. You're here to borrow other people's experience at a rate that isn't available on your own.</p>
+      <p>The reason an experienced trader spots the unmortgageable flat, the short lease or the £40,000 of works in ninety seconds isn't that they're cleverer than you. It's that they've seen it go wrong before.</p>
+    </div>
+
+    <p class="abc-display abc-pull">We give you the reps <em>without the losses.</em></p>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="abc-band abc-band--dark" id="proof">
+  <div class="abc-wrap">
+    <p class="abc-eyebrow abc-eyebrow--gold">What the room actually does</p>
+    <h2 class="abc-display abc-h2 abc-h2--wide" style="margin-bottom:clamp(40px,5vw,64px)">Twenty-four people. Thirty-three million pounds of property.</h2>
+
+    <!-- DATE-STAMP THIS. Refresh annually. A stale figure is worse than none. -->
+    <div class="abc-proof__banner">
+      <div>
+        <div class="abc-proof__n">£18m</div>
+        <div class="abc-proof__l">Purchased by members<br>in the 12 months to [month year]</div>
+      </div>
+      <div>
+        <div class="abc-proof__n">£15m</div>
+        <div class="abc-proof__l">Sold by members<br>over the same period</div>
+      </div>
+      <div>
+        <div class="abc-proof__n">~£750k</div>
+        <div class="abc-proof__l">Average purchases<br>per member, per year</div>
+      </div>
+    </div>
+
+    <div class="abc-cards">
+      <!-- FEATURE CARD: the walk-away story. This is the single most valuable
+           piece of proof on the page. Fill it before anything else. -->
+      <article class="abc-card abc-card--feature">
+        <p class="abc-card__who">The one that didn't happen</p>
+        <h3 class="abc-card__h">[Member] was ready to bid £[X]. We found the thing that would have cost them £[X].</h3>
+        <p>[What the lot was. What looked fine. What the room spotted: the lease, the title defect, the structural issue, the planning problem. What they did instead.]</p>
+        <q>[Quote from the member.]</q>
+      </article>
+
+      <article class="abc-card">
+        <p class="abc-card__who">[Name] · [Background]</p>
+        <h3 class="abc-card__h">[What they bought, in six words]</h3>
+        <p>[Where they started: experience, portfolio, confidence. What they bought and when. What it made or what it now yields.]</p>
+        <q>[Quote.]</q>
+      </article>
+
+      <article class="abc-card">
+        <p class="abc-card__who">[Name] · [Background]</p>
+        <h3 class="abc-card__h">[What they bought, in six words]</h3>
+        <p>[Same structure. Ideally someone who joined with no auction experience at all, since that's the story most prospects need to see.]</p>
+        <q>[Quote.]</q>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO'S IN THE ROOM ============ -->
+<section class="abc-band abc-band--paper">
+  <div class="abc-wrap">
+    <p class="abc-eyebrow abc-eyebrow--navy">The room</p>
+    <h2 class="abc-display abc-h2" style="margin-bottom:34px">Twenty-four people, and we interview every one of them.</h2>
+    <div class="abc-body-copy">
+      <p>Members come from banking, medicine, professional sport, the trades and full-time property. Some have been buying at auction for twenty years. Some bought their first lot after joining.</p>
+      <p>What they have in common is that they are all actually transacting. Nobody is watching from the sidelines, nobody is here to sell you anything, and nobody guards their deals. Members openly discuss properties they're interested in, because the room is worth more to them than any single lot.</p>
+      <p>Trust is the currency here. It only works because we're careful about who comes in, and because the moment the room gets bigger than twenty-four, your lot stops getting looked at properly. That is the entire product, so the cap doesn't move.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
+<section class="abc-band abc-band--lift" id="included">
+  <div class="abc-wrap">
+    <p class="abc-eyebrow abc-eyebrow--navy">Membership</p>
+    <h2 class="abc-display abc-h2 abc-h2--wide">What you get, beyond the calls.</h2>
+
+    <div class="abc-inc">
+      <div class="abc-inc__cell">
+        <h3 class="abc-inc__h">Deal review calls</h3>
+        <p>Tuesday and Thursday, 8:45am. Bring your lots, get a straight answer, hear everyone else's.</p>
+        <small>Over 1,000 lots a year</small>
+      </div>
+      <div class="abc-inc__cell">
+        <h3 class="abc-inc__h">Direct access to Jay &amp; Piotr</h3>
+        <p>The full members' WhatsApp group, plus a private group with just the two of us for anything you'd rather not put in the room.</p>
+        <small>Deals · numbers · second thoughts</small>
+      </div>
+      <div class="abc-inc__cell">
+        <h3 class="abc-inc__h">Quarterly Boardroom Day</h3>
+        <p>A full day in person in Central London with invited guests. Troubleshooting, industry insight, and the conversations that don't happen on Zoom.</p>
+        <small>£100 + VAT supplement per meeting, at cost</small>
+      </div>
+      <div class="abc-inc__cell">
+        <h3 class="abc-inc__h">Roma Finance Hunter's Facility</h3>
+        <p>Available to club members only, subject to underwriting. Plus a broker who buys and sells at auction himself.</p>
+        <small>Exclusive to ABC</small>
+      </div>
+      <div class="abc-inc__cell">
+        <h3 class="abc-inc__h">The tools</h3>
+        <p>On-demand recording of our two-day auction workshop, maximum bid calculator, stamp duty formula, and the rest of what we use ourselves.</p>
+        <small>Plus 25% longer EIG subscription</small>
+      </div>
+      <div class="abc-inc__cell">
+        <h3 class="abc-inc__h">Our professional network</h3>
+        <p>Solicitors, architects, planning consultants, surveyors, accountants. People we use, not a directory we compiled.</p>
+        <small>Plus member rates on live events and the annual retreat</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITERIA ============ -->
+<section class="abc-band abc-band--navy" id="criteria">
+  <div class="abc-wrap">
+    <p class="abc-eyebrow abc-eyebrow--gold">Who it's for</p>
+    <h2 class="abc-display abc-h2 abc-h2--wide" style="margin-bottom:clamp(40px,5vw,60px)">We say no to people. That's what keeps it worth joining.</h2>
+    <div class="abc-crit">
+      <div>
+        <div class="abc-crit__item">
+          <p class="abc-crit__h">£100,000+ liquid</p>
+          <p>Cash available for your own deals, or an unencumbered or low-geared portfolio. Not because we're precious, but because the learning only lands when you can act on it. Watching teaches you nothing.</p>
+        </div>
+        <div class="abc-crit__item">
+          <p class="abc-crit__h">Ready to transact</p>
+          <p>Now. Not next year, and not once you've read a bit more.</p>
+        </div>
+      </div>
+      <div>
+        <div class="abc-crit__item">
+          <p class="abc-crit__h">Willing to do the work</p>
+          <p>Go through the catalogues before the call. Turn up for the calls in your auction cycle. Research your own lots. We'll give you an honest read on any property. We won't do your homework.</p>
+        </div>
+        <div class="abc-crit__item">
+          <p class="abc-crit__h">Willing to share</p>
+          <p>Everyone in the room is getting the benefit of other people's experience. You're expected to put yours in.</p>
+        </div>
+      </div>
+    </div>
+    <div class="abc-body-copy" style="margin-top:clamp(36px,5vw,56px)">
+      <p style="color:rgba(255,255,255,.82)">If that isn't you yet, apply anyway and say so. We'll tell you honestly and point you at what to do first. Timing matters more than ambition in this game, and there's no shame in being early.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO JOIN ============ -->
+<section class="abc-band abc-band--paper">
+  <div class="abc-wrap">
+    <p class="abc-eyebrow abc-eyebrow--navy">The process</p>
+    <h2 class="abc-display abc-h2">How you join.</h2>
+    <div class="abc-steps">
+      <div class="abc-step">
+        <div>
+          <h3 class="abc-step__h">Apply</h3>
+          <p>Ten minutes. Tells us who you are, what you're buying, and where you're up to.</p>
+        </div>
+      </div>
+      <div class="abc-step">
+        <div>
+          <h3 class="abc-step__h">A call with Jay or Piotr</h3>
+          <p>Twenty to thirty minutes, and it goes both ways. We're working out whether the club is right for you, and you're doing exactly the same. We'll talk you through the membership fee here, once you know what you'd be getting for it.</p>
+        </div>
+      </div>
+      <div class="abc-step">
+        <div>
+          <h3 class="abc-step__h">Terms and first invoice</h3>
+          <p>Six-month minimum, billed six-monthly in advance, one month's notice on renewals.</p>
+        </div>
+      </div>
+      <div class="abc-step">
+        <div>
+          <h3 class="abc-step__h">You're in</h3>
+          <p>Added to the WhatsApp group the same day. First call the following Tuesday or Thursday. Bring a lot.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLY ============ -->
+<section class="abc-band abc-band--dark" id="apply">
+  <div class="abc-wrap">
+    <div class="abc-apply">
+      <div>
+        <p class="abc-eyebrow abc-eyebrow--gold">[X] places currently open</p>
+        <h2 class="abc-display abc-h2">Apply for a place.</h2>
+        <p class="abc-lede" style="color:rgba(255,255,255,.8);margin-top:24px">Membership is capped at twenty-four and every application goes through an interview. If it isn't right for you, we'll say so.</p>
+        <p class="abc-apply__note">
+          We don't publish the fee.<br>
+          Not to be coy, but because a number on its own tells you nothing about whether this is worth it. We'd rather show you what happens in the room first, then talk about money on the call.
+        </p>
+      </div>
+
+      <!-- Wire the action to your form handler (Squarespace Form Block, Formspark, Basin, GHL webhook, etc.) -->
+      <form class="abc-form" method="post" action="#">
+        <div class="abc-form__row">
+          <div class="abc-field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" required>
+          </div>
+          <div class="abc-field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" required>
+          </div>
+        </div>
+        <div class="abc-field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required>
+        </div>
+        <div class="abc-form__row">
+          <div class="abc-field">
+            <label for="f-funds">Funds available for your own deals</label>
+            <select id="f-funds" name="funds" required>
+              <option value="">Select</option>
+              <option>Under £100,000</option>
+              <option>£100,000 – £250,000</option>
+              <option>£250,000 – £500,000</option>
+              <option>£500,000+</option>
+              <option>Unencumbered / low-geared portfolio</option>
+            </select>
+          </div>
+          <div class="abc-field">
+            <label for="f-exp">Auction experience</label>
+            <select id="f-exp" name="experience" required>
+              <option value="">Select</option>
+              <option>None yet</option>
+              <option>Attended, never bid</option>
+              <option>Bought 1–3 lots</option>
+              <option>Bought 4+ lots</option>
+              <option>Buying regularly</option>
+            </select>
+          </div>
+        </div>
+        <div class="abc-field">
+          <label for="f-goal">What are you trying to buy over the next twelve months?</label>
+          <textarea id="f-goal" name="goal" rows="4" placeholder="Type of property, area, and how many."></textarea>
+        </div>
+        <button class="abc-btn abc-btn--gold abc-form__submit" type="submit">Send application <span class="abc-btn__arrow">&rarr;</span></button>
+        <p class="abc-form__small">We'll come back to you within two working days. Everything you tell us stays between you, Jay and Piotr.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="abc-foot">
+  <div class="abc-wrap abc-foot__in">
+    <div>Auction Buyers Club · Created by HAMMERED · Established 2020</div>
+    <div>
+      <a href="https://www.linkedin.com/company/auction-buyers-club">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="mailto:info@hammeredauctions.co.uk">info@hammeredauctions.co.uk</a> &nbsp;·&nbsp;
+      <a href="tel:+442081230988">+44 (0)208 123 0988</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

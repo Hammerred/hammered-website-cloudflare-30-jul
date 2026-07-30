@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAMMERED | The UK's independent authority on property auctions</title>
+<meta name="description" content="Sell fast, buy well, or find out whether auction is right for you at all. HAMMERED is the UK's independent property auction authority. Advising sellers, buyers and traders since 2020.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16161A;
+  --ink-soft:rgba(22,22,26,.72);
+  --ink-faint:rgba(22,22,26,.5);
+  --white:#FFFFFF;
+  --paper:#FBFBFA;
+  --paper-2:#F1F1ED;
+  --gold:#C89A2B;
+  --gold-br:#E4B84C;
+  --gold-pale:#F7EFDC;
+  --navy:#1F355E;
+  --green:#3F6B4B;
+  --copper:#A65A2A;
+  --slate:#5C6670;
+  --ll:rgba(22,22,26,.12);
+  --ld:rgba(255,255,255,.16);
+  --display:'Anton',Impact,sans-serif;
+  --body:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --ui:'Karla',system-ui,-apple-system,sans-serif;
+  --wrap:1200px;
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.hm-wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.hm-d{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.95;margin:0}
+.hm-eyebrow{font-family:var(--ui);font-size:12.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 20px;color:var(--ink-faint)}
+.hm-eyebrow--gold{color:var(--gold)}
+
+/* nav - light */
+.hm-nav{position:sticky;top:0;z-index:80;background:rgba(251,251,250,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--ll)}
+.hm-nav__in{max-width:var(--wrap);margin:0 auto;padding:14px var(--gut);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.hm-nav__logo{font-family:var(--display);text-transform:uppercase;color:var(--ink);font-size:23px;letter-spacing:.02em;text-decoration:none;line-height:1}
+.hm-nav__links{display:flex;align-items:center;gap:26px}
+.hm-nav__a{font-family:var(--ui);font-size:15.5px;font-weight:500;letter-spacing:0;color:var(--ink-soft);text-decoration:none;padding:5px 0;border-bottom:2px solid transparent}
+.hm-nav__a:hover{color:var(--ink)}
+.hm-nav__a--sell:hover{border-color:var(--gold)}
+.hm-nav__a--buy:hover{border-color:var(--navy)}
+.hm-nav__a--learn:hover{border-color:var(--green)}
+.hm-nav__a--comm:hover{border-color:var(--copper)}
+@media(max-width:860px){.hm-nav__a{display:none}}
+.hm-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ui);font-size:16px;font-weight:600;letter-spacing:.005em;text-decoration:none;padding:14px 26px;border:1px solid transparent;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.hm-btn--gold{background:var(--gold);color:var(--ink)}
+.hm-btn--gold:hover{background:var(--gold-br)}
+.hm-btn--dark{background:var(--ink);color:#fff}
+.hm-btn--dark:hover{background:#2B2B31}
+.hm-btn--line{background:transparent;color:var(--ink);border-color:rgba(22,22,26,.3)}
+.hm-btn--line:hover{border-color:var(--ink);background:rgba(22,22,26,.04)}
+
+/* hero - light */
+.hm-hero{background:var(--paper);padding:clamp(56px,8vw,104px) 0 0;position:relative}
+.hm-hero::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--gold) 0 25%,var(--navy) 25% 50%,var(--green) 50% 75%,var(--copper) 75% 100%)}
+.hm-hero__h1{font-size:clamp(44px,8.6vw,116px);max-width:15ch}
+.hm-hero__h1 em{font-style:normal;color:var(--gold)}
+.hm-hero__sub{margin:30px 0 0;font-size:clamp(17px,1.8vw,21px);line-height:1.6;color:var(--ink-soft);max-width:56ch}
+.hm-hero__cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:36px}
+.hm-hero__strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ll);margin-top:clamp(52px,7vw,84px);border-top:1px solid var(--ll);border-bottom:1px solid var(--ll)}
+@media(max-width:760px){.hm-hero__strip{grid-template-columns:1fr 1fr}}
+.hm-hero__stat{background:var(--paper);padding:26px 18px 30px 0}
+.hm-hero__n{font-family:var(--display);font-size:clamp(30px,3.7vw,42px);color:var(--ink);line-height:1;letter-spacing:.01em}
+.hm-hero__l{font-family:var(--ui);font-size:13.5px;font-weight:500;color:var(--ink-faint);margin-top:10px;line-height:1.5}
+
+/* doors - light cards */
+.hm-doors{background:var(--paper-2);padding:clamp(56px,8vw,96px) 0}
+.hm-doors__q{font-size:clamp(30px,4.6vw,56px);margin:0 0 clamp(28px,4vw,44px)}
+.hm-doors__q em{font-style:normal;color:var(--gold)}
+.hm-doors__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:980px){.hm-doors__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.hm-doors__grid{grid-template-columns:1fr}}
+.hm-door{background:var(--white);padding:clamp(24px,2.8vw,32px);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;min-height:288px;border-top:5px solid;box-shadow:0 1px 2px rgba(22,22,26,.05);transition:transform .18s,box-shadow .18s}
+.hm-door:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(22,22,26,.09)}
+.hm-door--sell{border-top-color:var(--gold)}
+.hm-door--buy{border-top-color:var(--navy)}
+.hm-door--learn{border-top-color:var(--green)}
+.hm-door--comm{border-top-color:var(--copper)}
+.hm-door__k{font-family:var(--ui);font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 auto}
+.hm-door__h{font-family:var(--display);text-transform:uppercase;font-size:clamp(25px,2.9vw,32px);line-height:1.02;margin:32px 0 12px}
+.hm-door p{margin:0;font-size:16.5px;line-height:1.55;color:var(--ink-soft)}
+.hm-door__go{font-family:var(--ui);font-size:15px;font-weight:600;margin-top:20px}
+.hm-door--sell .hm-door__go{color:var(--gold)}
+.hm-door--buy .hm-door__go{color:var(--navy)}
+.hm-door--learn .hm-door__go{color:var(--green)}
+.hm-door--comm .hm-door__go{color:var(--copper)}
+
+/* bands */
+.hm-band{padding:clamp(68px,9vw,116px) 0}
+.hm-band--paper{background:var(--paper)}
+.hm-band--alt{background:var(--paper-2)}
+.hm-h2{font-size:clamp(32px,5.2vw,62px);max-width:20ch}
+.hm-rule{height:5px;width:64px;margin-bottom:24px}
+.hm-rule--sell{background:var(--gold)}
+.hm-rule--buy{background:var(--navy)}
+.hm-rule--learn{background:var(--green)}
+.hm-rule--comm{background:var(--copper)}
+.hm-rule--all{background:linear-gradient(90deg,var(--gold) 0 25%,var(--navy) 25% 50%,var(--green) 50% 75%,var(--copper) 75% 100%);width:120px}
+.hm-lede{font-size:clamp(18px,2vw,21px);line-height:1.6;max-width:62ch;color:var(--ink-soft)}
+
+/* three exits */
+.hm-exits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(40px,5vw,60px)}
+@media(max-width:860px){.hm-exits{grid-template-columns:1fr}}
+.hm-exit{background:var(--white);padding:clamp(24px,2.8vw,34px);border-top:5px solid var(--gold);display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(22,22,26,.05)}
+.hm-exit--b{border-top-color:var(--gold);background:var(--gold-pale)}
+.hm-exit--c{border-top-color:var(--slate)}
+.hm-exit__t{font-family:var(--ui);font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px}
+.hm-exit__h{font-family:var(--display);text-transform:uppercase;font-size:clamp(28px,3.4vw,40px);line-height:1;margin:0 0 6px}
+.hm-exit__time{font-family:var(--ui);font-weight:700;font-size:16px;color:var(--gold);margin:0 0 20px}
+.hm-exit--c .hm-exit__time{color:var(--slate)}
+.hm-exit p{margin:0 0 20px;font-size:17px;line-height:1.62;color:var(--ink-soft)}
+.hm-exit__flag{display:inline-block;font-family:var(--ui);font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:5px 11px;margin-bottom:14px;align-self:flex-start}
+.hm-dials{margin-top:auto;border-top:1px solid var(--ll);padding-top:18px;display:grid;gap:11px}
+.hm-dial{display:grid;grid-template-columns:74px 1fr;align-items:center;gap:12px}
+.hm-dial__l{font-family:var(--ui);font-size:13px;font-weight:600;color:var(--ink-faint)}
+.hm-dial__bar{display:flex;gap:3px}
+.hm-dial__seg{height:8px;flex:1;background:rgba(22,22,26,.12)}
+.hm-dial__seg--on{background:var(--ink)}
+.hm-exit__note{font-family:var(--body);font-style:italic;font-size:15.5px;line-height:1.6;color:var(--ink-faint);margin:16px 0 0}
+
+/* split */
+.hm-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media(max-width:860px){.hm-two{grid-template-columns:1fr}}
+.hm-list{list-style:none;margin:0;padding:0}
+.hm-list li{padding:14px 0 14px 28px;position:relative;border-top:1px solid var(--ll);font-size:17.5px;line-height:1.6;color:var(--ink-soft)}
+.hm-list li:first-child{border-top:0}
+.hm-list li strong{color:var(--ink)}
+.hm-list li::before{content:"";position:absolute;left:0;top:24px;width:13px;height:1px;background:var(--gold)}
+
+/* ABC panel - the one rich moment */
+.hm-panel{background:var(--navy);color:#fff;padding:clamp(30px,4.2vw,54px);margin-top:clamp(36px,5vw,56px)}
+.hm-panel__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,60px);align-items:center}
+@media(max-width:860px){.hm-panel__grid{grid-template-columns:1fr}}
+.hm-panel__h{font-family:var(--display);text-transform:uppercase;font-size:clamp(30px,4.2vw,50px);line-height:1;margin:0 0 18px}
+.hm-panel p{color:rgba(255,255,255,.84);margin:0 0 24px;font-size:17px}
+.hm-panel__stats{display:grid;gap:22px;border-left:1px solid rgba(255,255,255,.24);padding-left:clamp(22px,3vw,38px)}
+@media(max-width:860px){.hm-panel__stats{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,.24);padding-top:26px;grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.hm-panel__stats{grid-template-columns:1fr 1fr}}
+.hm-panel__n{font-family:var(--display);font-size:clamp(30px,3.6vw,40px);color:var(--gold-br);line-height:1;letter-spacing:.01em}
+.hm-panel__l{font-family:var(--ui);font-size:13.5px;font-weight:500;color:rgba(255,255,255,.68);margin-top:9px;line-height:1.5}
+
+/* cards */
+.hm-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(36px,5vw,56px)}
+@media(max-width:900px){.hm-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hm-cards{grid-template-columns:1fr}}
+.hm-card{background:var(--white);padding:clamp(22px,2.6vw,30px);min-height:200px;display:flex;flex-direction:column;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(22,22,26,.05);border-left:3px solid transparent;transition:transform .18s,box-shadow .18s}
+.hm-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(22,22,26,.09)}
+.hm-card--buy{border-left-color:var(--navy)}
+.hm-card--learn{border-left-color:var(--green)}
+.hm-card--comm{border-left-color:var(--copper)}
+.hm-card__h{font-family:var(--display);text-transform:uppercase;font-size:21px;line-height:1.1;margin:0 0 12px}
+.hm-card p{margin:0;font-size:16.5px;line-height:1.6;color:var(--ink-soft)}
+.hm-card__go{font-family:var(--ui);font-size:15px;font-weight:600;margin-top:auto;padding-top:18px}
+.hm-card--buy .hm-card__go{color:var(--navy)}
+.hm-card--learn .hm-card__go{color:var(--green)}
+.hm-card--comm .hm-card__go{color:var(--copper)}
+
+/* why */
+.hm-why{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(36px,5vw,56px)}
+@media(max-width:760px){.hm-why{grid-template-columns:1fr}}
+.hm-why__c{background:var(--white);padding:clamp(24px,3vw,36px);box-shadow:0 1px 2px rgba(22,22,26,.05)}
+.hm-why__h{font-family:var(--display);text-transform:uppercase;font-size:clamp(20px,2.4vw,26px);line-height:1.1;margin:0 0 14px}
+.hm-why__c p{margin:0;color:var(--ink-soft);font-size:17.5px;line-height:1.65}
+
+/* CTA */
+.hm-cta{background:var(--gold);color:var(--ink);padding:clamp(56px,8vw,96px) 0}
+.hm-cta__h{font-size:clamp(34px,6vw,78px);max-width:16ch}
+.hm-cta p{font-size:clamp(17px,1.9vw,20px);max-width:52ch;margin:24px 0 34px;line-height:1.6}
+.hm-cta__row{display:flex;flex-wrap:wrap;gap:13px}
+
+/* footer */
+.hm-foot{background:var(--ink);color:rgba(255,255,255,.55);padding:clamp(48px,6vw,72px) 0 40px}
+.hm-foot__grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:clamp(24px,3vw,40px)}
+@media(max-width:900px){.hm-foot__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.hm-foot__grid{grid-template-columns:1fr}}
+.hm-foot__logo{font-family:var(--display);text-transform:uppercase;color:#fff;font-size:26px;line-height:1;margin:0 0 14px}
+.hm-foot__h{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+.hm-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.hm-foot a{color:rgba(255,255,255,.72);text-decoration:none;font-size:16px;font-family:var(--ui)}
+.hm-foot a:hover{color:var(--gold)}
+.hm-foot__base{border-top:1px solid var(--ld);margin-top:clamp(36px,5vw,56px);padding-top:26px;font-family:var(--ui);font-size:14px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<nav class="hm-nav">
+  <div class="hm-nav__in">
+    <a class="hm-nav__logo" href="#top">Hammered</a>
+    <div class="hm-nav__links">
+      <a class="hm-nav__a hm-nav__a--sell" href="#sell">Sell</a>
+      <a class="hm-nav__a hm-nav__a--buy" href="#buy">Buy</a>
+      <a class="hm-nav__a hm-nav__a--learn" href="#learn">Learn</a>
+      <a class="hm-nav__a hm-nav__a--comm" href="#community">Community</a>
+      <a class="hm-btn hm-btn--gold" href="#assess">Free assessment &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hm-hero" id="top">
+  <div class="hm-wrap">
+    <p class="hm-eyebrow hm-eyebrow--gold">The UK's independent authority on property auctions</p>
+    <h1 class="hm-d hm-hero__h1">Whatever you're doing in the auction space. <em>Get Hammered.</em></h1>
+    <p class="hm-hero__sub">We're not an auction house and we're not an estate agency. We're independent, which means we can tell you the truth about your property, whichever way it ends up selling.</p>
+    <div class="hm-hero__cta">
+      <a class="hm-btn hm-btn--dark" href="#assess">Get your property assessed &rarr;</a>
+      <a class="hm-btn hm-btn--line" href="#buy">I'm here to buy</a>
+    </div>
+
+    <!-- REPLACE figures with confirmed numbers -->
+    <div class="hm-hero__strip">
+      <div class="hm-hero__stat"><div class="hm-hero__n">[X]</div><div class="hm-hero__l">Properties sold<br>at auction</div></div>
+      <div class="hm-hero__stat"><div class="hm-hero__n">48hrs</div><div class="hm-hero__l">Legal pack<br>turnaround</div></div>
+      <div class="hm-hero__stat"><div class="hm-hero__n">14 days</div><div class="hm-hero__l">Fastest route<br>to completion</div></div>
+      <div class="hm-hero__stat"><div class="hm-hero__n">2020</div><div class="hm-hero__l">Advising buyers<br>and sellers since</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- FOUR DOORS -->
+<section class="hm-doors">
+  <div class="hm-wrap">
+    <h2 class="hm-d hm-doors__q">What brings you <em>here?</em></h2>
+    <div class="hm-doors__grid">
+      <a class="hm-door hm-door--sell" href="#sell">
+        <p class="hm-door__k">01 / Sell</p>
+        <h3 class="hm-door__h">I need to sell a property</h3>
+        <p>Cash in 14 days, auction in 28, or the open market. We'll price all three and tell you which one fits.</p>
+        <span class="hm-door__go">See the three exits &rarr;</span>
+      </a>
+      <a class="hm-door hm-door--buy" href="#buy">
+        <p class="hm-door__k">02 / Buy</p>
+        <h3 class="hm-door__h">I want to buy at auction</h3>
+        <p>The Auction Buyers Club. A capped room of investors who review over 1,000 lots a year.</p>
+        <span class="hm-door__go">Inside the club &rarr;</span>
+      </a>
+      <a class="hm-door hm-door--learn" href="#learn">
+        <p class="hm-door__k">03 / Learn</p>
+        <h3 class="hm-door__h">I want to understand auctions first</h3>
+        <p>The book, the guides, the YouTube channel and our market commentary. Start free.</p>
+        <span class="hm-door__go">Start here &rarr;</span>
+      </a>
+      <a class="hm-door hm-door--comm" href="#community">
+        <p class="hm-door__k">04 / Community</p>
+        <h3 class="hm-door__h">I want to be in the room</h3>
+        <p>Boardroom days, live events and the annual retreat. Where the deals and relationships happen.</p>
+        <span class="hm-door__go">What's coming up &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SELL -->
+<section class="hm-band hm-band--paper" id="sell">
+  <div class="hm-wrap">
+    <div class="hm-rule hm-rule--sell"></div>
+    <p class="hm-eyebrow">Hammered Sell</p>
+    <h2 class="hm-d hm-h2">Every property can sell. The only question is how fast you need it gone.</h2>
+    <p class="hm-lede" style="margin-top:26px">Speed, certainty and price pull against each other. Nobody explains that to sellers. The agent doesn't mention auction, the auction house doesn't mention private treaty, and nobody offers a cash exit alongside either. We put all three on the table and price them.</p>
+
+    <div class="hm-exits">
+      <div class="hm-exit">
+        <p class="hm-exit__t">Exit One</p>
+        <h3 class="hm-exit__h">Cash</h3>
+        <p class="hm-exit__time">Completed in 14 days</p>
+        <p>We take it to our cash buyer network and come back with a real figure you can accept or refuse. Contracts exchanged, money in, done inside a fortnight of the first phone call.</p>
+        <div class="hm-dials">
+          <div class="hm-dial"><span class="hm-dial__l">Speed</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i></span></div>
+          <div class="hm-dial"><span class="hm-dial__l">Certainty</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i></span></div>
+          <div class="hm-dial"><span class="hm-dial__l">Price</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg"></i><i class="hm-dial__seg"></i><i class="hm-dial__seg"></i></span></div>
+        </div>
+        <p class="hm-exit__note">Roughly 10-15% below auction. That covers the buyer's stamp duty, costs and risk, and we'll tell you so before you decide.</p>
+      </div>
+
+      <div class="hm-exit hm-exit--b">
+        <span class="hm-exit__flag">Most properties</span>
+        <p class="hm-exit__t">Exit Two</p>
+        <h3 class="hm-exit__h">Auction</h3>
+        <p class="hm-exit__time">Completed in [28] days</p>
+        <p>Competitive bidding in a room of buyers who buy for a living. Binding contracts on the fall of the hammer: no chain, no gazundering, nobody walking away in week nine.</p>
+        <div class="hm-dials">
+          <div class="hm-dial"><span class="hm-dial__l">Speed</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg"></i></span></div>
+          <div class="hm-dial"><span class="hm-dial__l">Certainty</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg"></i></span></div>
+          <div class="hm-dial"><span class="hm-dial__l">Price</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg"></i></span></div>
+        </div>
+        <p class="hm-exit__note">Where most properties that come to us belong. It's the best balance of all three.</p>
+      </div>
+
+      <div class="hm-exit hm-exit--c">
+        <p class="hm-exit__t">Exit Three</p>
+        <h3 class="hm-exit__h">Open market</h3>
+        <p class="hm-exit__time">Three to six months</p>
+        <p>If your property is straightforward, mortgageable and you have the time, the open market usually wins on price. We don't do private treaty, so we'll introduce you to agents we rate, and they'll know the introduction came from us.</p>
+        <div class="hm-dials">
+          <div class="hm-dial"><span class="hm-dial__l">Speed</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg"></i><i class="hm-dial__seg"></i><i class="hm-dial__seg"></i><i class="hm-dial__seg"></i></span></div>
+          <div class="hm-dial"><span class="hm-dial__l">Certainty</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg"></i><i class="hm-dial__seg"></i><i class="hm-dial__seg"></i></span></div>
+          <div class="hm-dial"><span class="hm-dial__l">Price</span><span class="hm-dial__bar"><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i><i class="hm-dial__seg hm-dial__seg--on"></i></span></div>
+        </div>
+        <p class="hm-exit__note">An agent who knows where their last five instructions came from behaves differently to one handling a stranger.</p>
+      </div>
+    </div>
+
+    <div class="hm-two" style="margin-top:clamp(48px,6vw,80px)">
+      <div>
+        <h3 class="hm-d" style="font-size:clamp(24px,3vw,34px);margin-bottom:20px">What we do once you've chosen</h3>
+        <ul class="hm-list">
+          <li><strong>The number.</strong> Two decades of auction results behind one figure. The one that gets a completion, not the one that wins the instruction.</li>
+          <li><strong>Legal pack in 48 hours.</strong> Most sellers wait three to six weeks. That's a month off your sale before you've done anything.</li>
+          <li><strong>The right room.</strong> We're independent, so your lot goes to the auction house that suits it, plus our own community of active buyers.</li>
+          <li><strong>Run to completion.</strong> Marketing, viewings, enquiries, solicitors, auction day. One point of contact. You get updates, not a job.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hm-d" style="font-size:clamp(24px,3vw,34px);margin-bottom:20px">What it costs</h3>
+        <p style="font-size:17.5px;line-height:1.7">We don't make money unless your property sells. That doesn't change on any route.</p>
+        <p style="font-size:17.5px;line-height:1.7">The only question on the auction route is who funds the upfront costs. <strong>Take our recommended reserve and we cover them.</strong> We set the number, so we carry the cost of being wrong about it.</p>
+        <p style="font-size:17.5px;line-height:1.7">Set your own reserve above ours and you fund them: <strong>£1,000 + VAT, at cost.</strong> There's no profit in that figure. We'll still take the instruction and work it just as hard. We just can't underwrite a number we didn't set.</p>
+        <a class="hm-btn hm-btn--dark" href="#assess" style="margin-top:14px">Get all three priced &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section class="hm-band hm-band--alt" id="buy">
+  <div class="hm-wrap">
+    <div class="hm-rule hm-rule--buy"></div>
+    <p class="hm-eyebrow">Hammered Buy</p>
+    <h2 class="hm-d hm-h2">Buying at auction is easy. Buying well is not.</h2>
+    <p class="hm-lede" style="margin-top:26px">Anyone can download a catalogue and raise a hand. The difficult part is knowing, before the hammer falls, whether the lot in front of you is a good deal or an expensive mistake.</p>
+
+    <div class="hm-panel">
+      <div class="hm-panel__grid">
+        <div>
+          <h3 class="hm-panel__h">The Auction Buyers Club</h3>
+          <p>A capped room of twenty-four investors who buy at auction for a living. Twice a week, members bring the lots they're considering and get a straight answer: good deal or walk away, what it's worth, what to bid.</p>
+          <p style="margin-bottom:26px">Over 1,000 lots reviewed a year. Most buyers manage five.</p>
+          <a class="hm-btn hm-btn--gold" href="https://auctionbuyers.club">Inside the club &rarr;</a>
+        </div>
+        <div class="hm-panel__stats">
+          <div><div class="hm-panel__n">£18m</div><div class="hm-panel__l">Bought by members<br>in 12 months</div></div>
+          <div><div class="hm-panel__n">1,000+</div><div class="hm-panel__l">Lots reviewed<br>each year</div></div>
+          <div><div class="hm-panel__n">24</div><div class="hm-panel__l">Members.<br>No more</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hm-cards">
+      <a class="hm-card hm-card--buy" href="#">
+        <h3 class="hm-card__h">Lots we're selling</h3>
+        <p>Properties currently going to auction through HAMMERED. Buyers get straight answers on any of them.</p>
+        <span class="hm-card__go">See current lots &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--buy" href="#">
+        <h3 class="hm-card__h">Buying support</h3>
+        <p>Due diligence, negotiation and deal structuring on individual lots, pre- or post-auction.</p>
+        <span class="hm-card__go">How it works &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--buy" href="#">
+        <h3 class="hm-card__h">Finance</h3>
+        <p>Auction finance through brokers who buy at auction themselves, including facilities exclusive to club members.</p>
+        <span class="hm-card__go">Funding your purchase &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section class="hm-band hm-band--paper" id="learn">
+  <div class="hm-wrap">
+    <div class="hm-rule hm-rule--learn"></div>
+    <p class="hm-eyebrow">Hammered Learn</p>
+    <h2 class="hm-d hm-h2">Start free. Most people should.</h2>
+    <p class="hm-lede" style="margin-top:26px">You shouldn't have to buy anything to work out whether auction is right for you. Everything we know is out in the open: the book, the channel, the guides. Use it, and come back when you're ready to transact.</p>
+
+    <div class="hm-cards">
+      <a class="hm-card hm-card--learn" href="#">
+        <h3 class="hm-card__h">Before The Hammer Falls</h3>
+        <p>Our Amazon bestseller on buying and selling at auction. Free. You just cover £3.50 postage.</p>
+        <span class="hm-card__go">Send me the book &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--learn" href="#">
+        <h3 class="hm-card__h">The channel</h3>
+        <p>Auction breakdowns, case studies, interviews with auctioneers, and what actually happened on the lots we've sold.</p>
+        <span class="hm-card__go">Watch &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--learn" href="#">
+        <h3 class="hm-card__h">Guides</h3>
+        <p>Guide prices, reserves, legal packs, fees, timelines. The things people get wrong, explained plainly.</p>
+        <span class="hm-card__go">Read the guides &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--learn" href="#">
+        <h3 class="hm-card__h">Market insights</h3>
+        <p>What's selling, what isn't, and what it's going for. Straight from the lots we're in every week.</p>
+        <span class="hm-card__go">Latest insight &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--learn" href="#">
+        <h3 class="hm-card__h">Workshops</h3>
+        <p>Two days on the A–Z of auction. Run live, and available on demand to club members.</p>
+        <span class="hm-card__go">Next dates &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--learn" href="#">
+        <h3 class="hm-card__h">Case studies</h3>
+        <p>Real properties, real numbers, real outcomes, including the ones that didn't go to plan.</p>
+        <span class="hm-card__go">See the work &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="hm-band hm-band--alt" id="community">
+  <div class="hm-wrap">
+    <div class="hm-rule hm-rule--comm"></div>
+    <p class="hm-eyebrow">Hammered Community</p>
+    <h2 class="hm-d hm-h2">The part that doesn't happen on a screen.</h2>
+    <p class="hm-lede" style="margin-top:26px">Deals come from rooms. Every serious relationship in this business started with someone sitting across a table: the buyers, the partners, the people who send us sellers.</p>
+
+    <div class="hm-cards">
+      <a class="hm-card hm-card--comm" href="#">
+        <h3 class="hm-card__h">Boardroom Days</h3>
+        <p>Quarterly, Central London. A full day of troubleshooting, invited guests and the conversations Zoom can't do.</p>
+        <span class="hm-card__go">Next boardroom &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--comm" href="https://www.retreat.hammeredauctions.co.uk/">
+        <h3 class="hm-card__h">The Retreat</h3>
+        <p>Once a year, away from everything. The event members consistently say changed how they operate.</p>
+        <span class="hm-card__go">This year's retreat &rarr;</span>
+      </a>
+      <a class="hm-card hm-card--comm" href="#">
+        <h3 class="hm-card__h">Live events</h3>
+        <p>Open events for anyone in the auction space: buyers, sellers, traders and the people who serve them.</p>
+        <span class="hm-card__go">What's coming up &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="hm-band hm-band--paper">
+  <div class="hm-wrap">
+    <div class="hm-rule hm-rule--all"></div>
+    <p class="hm-eyebrow">Why us</p>
+    <h2 class="hm-d hm-h2">We're independent. That's the whole thing.</h2>
+    <div class="hm-why">
+      <div class="hm-why__c">
+        <h3 class="hm-why__h">We'll tell you not to use us</h3>
+        <p>An auction house takes every lot it can. An agent wins the instruction and works out the price later. We'll tell you when the open market is the better route and point you at someone good, because the wrong route costs you more than our fee is ever worth.</p>
+      </div>
+      <div class="hm-why__c">
+        <h3 class="hm-why__h">We're in the market ourselves</h3>
+        <p>We buy, we sell, and we trade. Everything we tell you comes from transactions we've done, not a course we once attended. When we say a number won't get a completion, it's because we've watched it fail.</p>
+      </div>
+      <div class="hm-why__c">
+        <h3 class="hm-why__h">One conversation, every route</h3>
+        <p>Cash, auction, open market. Buying, selling, or working out which. You don't have to understand how our business is structured before you can get a straight answer out of us.</p>
+      </div>
+      <div class="hm-why__c">
+        <h3 class="hm-why__h">Our buyers are why sellers win</h3>
+        <p>The community we've built on the buying side is what puts a room of funded, experienced bidders in front of every lot we sell. No auction house can offer a seller that, because none of them have spent six years building one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="hm-cta" id="assess">
+  <div class="hm-wrap">
+    <h2 class="hm-d hm-cta__h">How fast do you need it gone?</h2>
+    <p>Tell us about the property and your deadline. Within 48 hours you'll have all three routes priced and a straight recommendation. Free, and with no obligation to use us for any of it.</p>
+    <div class="hm-cta__row">
+      <a class="hm-btn hm-btn--dark" href="#">Get your three numbers &rarr;</a>
+      <a class="hm-btn hm-btn--line" href="tel:+442081230988">Call +44 (0)208 123 0988</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="hm-foot">
+  <div class="hm-wrap">
+    <div class="hm-foot__grid">
+      <div>
+        <p class="hm-foot__logo">Hammered</p>
+        <p style="font-size:14.5px;line-height:1.6;margin:0">The UK's independent authority on property auctions. Advising sellers, buyers and traders since 2020.</p>
+      </div>
+      <div>
+        <p class="hm-foot__h">Sell</p>
+        <ul><li><a href="#sell">The three exits</a></li><li><a href="#assess">Free assessment</a></li><li><a href="#">Seller guides</a></li><li><a href="#">Case studies</a></li></ul>
+      </div>
+      <div>
+        <p class="hm-foot__h">Buy</p>
+        <ul><li><a href="https://auctionbuyers.club">Auction Buyers Club</a></li><li><a href="#">Current lots</a></li><li><a href="#">Buying support</a></li><li><a href="#">Finance</a></li></ul>
+      </div>
+      <div>
+        <p class="hm-foot__h">Learn</p>
+        <ul><li><a href="#">The book</a></li><li><a href="#">YouTube</a></li><li><a href="#">Guides</a></li><li><a href="#">Market insights</a></li></ul>
+      </div>
+      <div>
+        <p class="hm-foot__h">Community</p>
+        <ul><li><a href="#">Boardroom Days</a></li><li><a href="https://www.retreat.hammeredauctions.co.uk/">The Retreat</a></li><li><a href="#">Live events</a></li><li><a href="#">Partnerships</a></li></ul>
+      </div>
+    </div>
+    <div class="hm-foot__base">
+      <span>&copy; 2026 HAMMERED</span>
+      <span><a href="mailto:info@hammeredauctions.co.uk">info@hammeredauctions.co.uk</a> · <a href="tel:+442081230988">+44 (0)208 123 0988</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
