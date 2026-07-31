@@ -139,7 +139,7 @@ a{color:inherit}
   background:var(--gold);color:var(--ink);font-family:var(--body);font-weight:700;
   font-size:11px;letter-spacing:.13em;text-transform:uppercase;padding:7px var(--gut);
 }
-.abc-ticker__track{display:flex;width:max-content;animation:abc-slide 200s linear infinite}
+.abc-ticker__track{display:flex;width:max-content;animation:abc-slide 55s linear infinite}
 .abc-ticker:hover .abc-ticker__track{animation-play-state:paused}
 @keyframes abc-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .abc-ticker__row{display:flex;flex-shrink:0}
@@ -386,55 +386,19 @@ a{color:inherit}
     <div class="abc-ticker__track">
       <div class="abc-ticker__row">
         <div class="abc-lot"><span class="abc-lot__what">Flat, Dover</span> <span class="abc-lot__guide"><em>Guide</em> £47,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £120,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Mixed use, Wigan</span> <span class="abc-lot__guide"><em>Guide</em> £180,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Coal mining subsidence</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Flat, Birmingham</span> <span class="abc-lot__guide"><em>Guide</em> £82,500</span> <span class="abc-lot__v abc-lot__v--yes">Worth £150,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">HMO, Reading</span> <span class="abc-lot__guide"><em>Guide</em> £360,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Unauthorised HMO</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Terrace, Sutton in Ashfield</span> <span class="abc-lot__guide"><em>Guide</em> £25,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £50,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Studio, West Hampstead</span> <span class="abc-lot__guide"><em>Guide</em> £200,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Too small to mortgage</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Caf&eacute;, Ludlow</span> <span class="abc-lot__guide"><em>Guide</em> £225,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £340,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">House, Inverness</span> <span class="abc-lot__guide"><em>Guide</em> £650,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £265,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Semi, Wiltshire</span> <span class="abc-lot__guide"><em>Guide</em> £120,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £200,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Mixed use, Bradford</span> <span class="abc-lot__guide"><em>Guide</em> £250,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Flying freehold</span></div>
+        <div class="abc-lot"><span class="abc-lot__what">Flat, Birmingham</span> <span class="abc-lot__guide"><em>Guide</em> £82,500</span> <span class="abc-lot__v abc-lot__v--yes">Worth £200,000</span></div>
         <div class="abc-lot"><span class="abc-lot__what">House, Stamford</span> <span class="abc-lot__guide"><em>Guide</em> £175,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £275,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">House, Winslow</span> <span class="abc-lot__guide"><em>Guide</em> £280,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; No building regs</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Bungalow, Cornwall</span> <span class="abc-lot__guide"><em>Guide</em> £70,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £105,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Office block, Newport</span> <span class="abc-lot__guide"><em>Guide</em> £500,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Lease expiring 2028</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Semi, East Anglia</span> <span class="abc-lot__guide"><em>Guide</em> £250,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £380,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">House, Chingford</span> <span class="abc-lot__guide"><em>Guide</em> £400,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £255,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Nottingham</span> <span class="abc-lot__guide"><em>Guide</em> £220,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £300,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Shop, Kent</span> <span class="abc-lot__guide"><em>Guide</em> £260,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Listed building</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Retail unit, Bristol</span> <span class="abc-lot__guide"><em>Guide</em> £125,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £162,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Commercial, Hereford</span> <span class="abc-lot__guide"><em>Guide</em> £650,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £450,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Norfolk</span> <span class="abc-lot__guide"><em>Guide</em> £1.3m</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £800,000</span></div>
+        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Luton</span> <span class="abc-lot__guide"><em>Guide</em> £2.0m</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £1.7m</span></div>
         <div class="abc-lot"><span class="abc-lot__what">Terrace, Birmingham</span> <span class="abc-lot__guide"><em>Guide</em> £180,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £130,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Luton</span> <span class="abc-lot__guide"><em>Guide</em> £2.0m</span> <span class="abc-lot__v abc-lot__v--yes">Room's number £1.7m</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Retail unit, Southampton</span> <span class="abc-lot__guide"><em>Guide</em> £20,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Lease too short</span></div>
+        <div class="abc-lot"><span class="abc-lot__what">Office block, Newport</span> <span class="abc-lot__guide"><em>Guide</em> £500,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Lease expiring 2028</span></div>
       </div>
       <div class="abc-ticker__row" aria-hidden="true">
         <div class="abc-lot"><span class="abc-lot__what">Flat, Dover</span> <span class="abc-lot__guide"><em>Guide</em> £47,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £120,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Mixed use, Wigan</span> <span class="abc-lot__guide"><em>Guide</em> £180,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Coal mining subsidence</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Flat, Birmingham</span> <span class="abc-lot__guide"><em>Guide</em> £82,500</span> <span class="abc-lot__v abc-lot__v--yes">Worth £150,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">HMO, Reading</span> <span class="abc-lot__guide"><em>Guide</em> £360,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Unauthorised HMO</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Terrace, Sutton in Ashfield</span> <span class="abc-lot__guide"><em>Guide</em> £25,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £50,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Studio, West Hampstead</span> <span class="abc-lot__guide"><em>Guide</em> £200,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Too small to mortgage</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Caf&eacute;, Ludlow</span> <span class="abc-lot__guide"><em>Guide</em> £225,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £340,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">House, Inverness</span> <span class="abc-lot__guide"><em>Guide</em> £650,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £265,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Semi, Wiltshire</span> <span class="abc-lot__guide"><em>Guide</em> £120,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £200,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Mixed use, Bradford</span> <span class="abc-lot__guide"><em>Guide</em> £250,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Flying freehold</span></div>
+        <div class="abc-lot"><span class="abc-lot__what">Flat, Birmingham</span> <span class="abc-lot__guide"><em>Guide</em> £82,500</span> <span class="abc-lot__v abc-lot__v--yes">Worth £200,000</span></div>
         <div class="abc-lot"><span class="abc-lot__what">House, Stamford</span> <span class="abc-lot__guide"><em>Guide</em> £175,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £275,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">House, Winslow</span> <span class="abc-lot__guide"><em>Guide</em> £280,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; No building regs</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Bungalow, Cornwall</span> <span class="abc-lot__guide"><em>Guide</em> £70,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £105,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Office block, Newport</span> <span class="abc-lot__guide"><em>Guide</em> £500,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Lease expiring 2028</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Semi, East Anglia</span> <span class="abc-lot__guide"><em>Guide</em> £250,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £380,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">House, Chingford</span> <span class="abc-lot__guide"><em>Guide</em> £400,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £255,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Nottingham</span> <span class="abc-lot__guide"><em>Guide</em> £220,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £300,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Shop, Kent</span> <span class="abc-lot__guide"><em>Guide</em> £260,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Listed building</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Retail unit, Bristol</span> <span class="abc-lot__guide"><em>Guide</em> £125,000</span> <span class="abc-lot__v abc-lot__v--yes">Worth £162,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Commercial, Hereford</span> <span class="abc-lot__guide"><em>Guide</em> £650,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £450,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Norfolk</span> <span class="abc-lot__guide"><em>Guide</em> £1.3m</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £800,000</span></div>
+        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Luton</span> <span class="abc-lot__guide"><em>Guide</em> £2.0m</span> <span class="abc-lot__v abc-lot__v--yes">Bid to £1.7m</span></div>
         <div class="abc-lot"><span class="abc-lot__what">Terrace, Birmingham</span> <span class="abc-lot__guide"><em>Guide</em> £180,000</span> <span class="abc-lot__v abc-lot__v--no">Overpriced &middot; bid £130,000</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Block of flats, Luton</span> <span class="abc-lot__guide"><em>Guide</em> £2.0m</span> <span class="abc-lot__v abc-lot__v--yes">Room's number £1.7m</span></div>
-        <div class="abc-lot"><span class="abc-lot__what">Retail unit, Southampton</span> <span class="abc-lot__guide"><em>Guide</em> £20,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Lease too short</span></div>
+        <div class="abc-lot"><span class="abc-lot__what">Office block, Newport</span> <span class="abc-lot__guide"><em>Guide</em> £500,000</span> <span class="abc-lot__v abc-lot__v--no">WALK &middot; Lease expiring 2028</span></div>
       </div>
     </div>
   </div>
