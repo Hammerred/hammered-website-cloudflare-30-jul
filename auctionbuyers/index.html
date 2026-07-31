@@ -180,14 +180,15 @@ a{color:inherit}
 .abc-prod__head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:end}
 @media(max-width:880px){.abc-prod__head{grid-template-columns:1fr}}
 .abc-prod__note{border-left:2px solid var(--gold);padding-left:22px;font-size:17px;line-height:1.6}
-.abc-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:clamp(44px,6vw,72px);background:var(--line-dark);border:1px solid var(--line-dark)}
+.abc-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:clamp(44px,6vw,72px);background:var(--line-light)}
 @media(max-width:760px){.abc-split{grid-template-columns:1fr}}
-.abc-split__col{background:transparent;color:#fff;padding:clamp(28px,4vw,44px)}
-.abc-split__col--dark{background:var(--navy);color:#fff;box-shadow:inset 3px 0 0 var(--gold)}
+.abc-split__col{background:var(--paper-lift);color:var(--ink);padding:clamp(28px,4vw,44px)}
+.abc-split__col--dark{background:var(--ink);color:#fff}
 .abc-split__t{font-family:var(--body);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 22px}
 .abc-list{list-style:none;margin:0;padding:0}
 .abc-list li{padding:13px 0 13px 28px;position:relative;border-top:1px solid var(--line-light);font-size:16.5px;line-height:1.55}
-.abc-split__col .abc-list li{border-top-color:var(--line-dark)}
+.abc-split__col .abc-list li{border-top-color:var(--line-light)}
+.abc-split__col--dark .abc-list li{border-top-color:var(--line-dark)}
 .abc-list li:first-child{border-top:0}
 .abc-list li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:1px;background:var(--gold)}
 .abc-body-copy p{max-width:84ch;font-size:17.5px;line-height:1.65}
@@ -229,8 +230,8 @@ a{color:inherit}
 @media(max-width:860px){.abc-card--feature{grid-template-columns:1fr;gap:24px}}
 .abc-card--feature .abc-card__who{grid-column:1/-1;margin-bottom:6px}
 .abc-card--feature .abc-card__h{
-  font-size:clamp(26px,3.6vw,44px);line-height:1.14;max-width:20ch;margin:0;
-  font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:-.005em;
+  font-size:clamp(21px,2.4vw,27px);line-height:1.28;max-width:22ch;margin:0;
+  font-family:var(--display-text);text-transform:none;font-weight:700;letter-spacing:-.003em;
 }
 .abc-card--feature p{margin:0 0 18px;font-size:17px}
 .abc-card--feature q{margin-top:0;font-size:19px}
@@ -582,7 +583,7 @@ a{color:inherit}
           </div>
           <div class="abc-inc__item">
             <h3 class="abc-inc__h">The room itself</h3>
-            <p>Twenty-three other active buyers, most of whom have already made the mistake you're about to.</p>
+            <p>Twenty-three other active buyers, each bringing their own live deals, specialisms and years in the market.</p>
           </div>
         </div>
       </div>
