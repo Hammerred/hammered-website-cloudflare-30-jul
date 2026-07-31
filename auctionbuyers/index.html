@@ -271,6 +271,10 @@ a{color:inherit}
 @media(max-width:560px){.abc-form__row{grid-template-columns:1fr}}
 .abc-form__submit{margin-top:8px;justify-self:start;border:0}
 .abc-form__small{font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.45);line-height:1.7;margin:6px 0 0}
+.abc-form__small a{color:var(--gold);font-weight:600}
+.abc-form-embed{background:#fff;border-radius:2px;overflow:hidden;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
+.abc-form-embed iframe{display:block;width:100%;min-height:820px;border:0}
+@media(max-width:560px){.abc-form-embed iframe{min-height:960px}}
 
 /* ---------- footer ---------- */
 .abc-foot{background:var(--ink);color:rgba(255,255,255,.5);border-top:1px solid var(--line-dark);padding:40px 0}
@@ -294,7 +298,7 @@ a{color:inherit}
       <a class="abc-nav__link" href="#included">What's included</a>
       <a class="abc-nav__link" href="#criteria">Who it's for</a>
       <a class="abc-nav__link" href="#faq">FAQ</a>
-      <a class="abc-btn abc-btn--gold" href="#apply">Apply <span class="abc-btn__arrow">&rarr;</span></a>
+      <a class="abc-btn abc-btn--gold" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply <span class="abc-btn__arrow">&rarr;</span></a>
     </div>
   </div>
 </nav>
@@ -308,7 +312,7 @@ a{color:inherit}
         <h1 class="abc-display abc-hero__h1">£18m bought.<em>£15m sold.</em>24 members.</h1>
         <p class="abc-hero__sub">A room of investors who buy at auction for a living, and a place you can bring any lot to, twice a week, before you bid on it.</p>
         <div class="abc-hero__cta">
-          <a class="abc-btn abc-btn--gold" href="#apply">Apply for membership <span class="abc-btn__arrow">&rarr;</span></a>
+          <a class="abc-btn abc-btn--gold" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply for membership <span class="abc-btn__arrow">&rarr;</span></a>
           <!-- REPLACE [X] with the live number of open places -->
           <span class="abc-hero__places">[X] places currently open</span>
         </div>
@@ -369,7 +373,7 @@ a{color:inherit}
     <p class="abc-video__intro">You'll get a better sense of this from the people in the room than from anything we write.</p>
     <div class="abc-video__frame">
       <!-- Existing Vimeo embed retained -->
-      <iframe src="https://player.vimeo.com/video/1021268334?h=9279fbbc63&title=0" title="Auction Buyers Club" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://player.vimeo.com/video/1148061136?h=c19851af4f&title=0" title="Auction Buyers Club" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -444,23 +448,23 @@ a{color:inherit}
            piece of proof on the page. Fill it before anything else. -->
       <article class="abc-card abc-card--feature">
         <p class="abc-card__who">The one that didn't happen</p>
-        <h3 class="abc-card__h">[Member] was ready to bid £[X]. We found the thing that would have cost them £[X].</h3>
-        <p>[What the lot was. What looked fine. What the room spotted: the lease, the title defect, the structural issue, the planning problem. What they did instead.]</p>
-        <q>[Quote from the member.]</q>
+        <h3 class="abc-card__h">Todd was ready to commit to a development deal. The room found the numbers that said don't.</h3>
+        <p>Todd brought what looked like a promising development opportunity to a Thursday call. The room worked through the resale assumptions, the site constraints and the overall margin — until it was clear the risk outweighed the reward. Instead of spending months and tens of thousands trying to rescue it, Todd walked away.</p>
+        <q>One conversation saved me from making a decision I would probably have regretted. That alone made the membership worthwhile.</q>
       </article>
 
       <article class="abc-card">
-        <p class="abc-card__who">[Name] · [Background]</p>
-        <h3 class="abc-card__h">[What they bought, in six words]</h3>
-        <p>[Where they started: experience, portfolio, confidence. What they bought and when. What it made or what it now yields.]</p>
-        <q>[Quote.]</q>
+        <p class="abc-card__who">Matthew Dorey</p>
+        <h3 class="abc-card__h">Bought pre-auction with confidence.</h3>
+        <p>Matthew brought the opportunity to the room, refined his bidding strategy, and secured a block of three flats for £225,000. Little work needed — expected to refinance between £275,000 and £300,000, creating immediate equity.</p>
+        <q>Having experienced investors challenge your thinking gives you the confidence to move quickly when the right opportunity comes along.</q>
       </article>
 
       <article class="abc-card">
-        <p class="abc-card__who">[Name] · [Background]</p>
-        <h3 class="abc-card__h">[What they bought, in six words]</h3>
-        <p>[Same structure. Ideally someone who joined with no auction experience at all, since that's the story most prospects need to see.]</p>
-        <q>[Quote.]</q>
+        <p class="abc-card__who">Susan McKillop</p>
+        <h3 class="abc-card__h">Negotiated a better deal.</h3>
+        <p>Susan secured a property in West Hampstead for £22,000 less than an inferior property in a poorer location had achieved only a few months earlier. Minimal refurbishment needed, with loft potential for the future.</p>
+        <q>The weekly reviews help you focus on buying the right property, not simply the cheapest one.</q>
       </article>
     </div>
   </div>
@@ -635,53 +639,11 @@ a{color:inherit}
         </p>
       </div>
 
-      <!-- Wire the action to your form handler (Squarespace Form Block, Formspark, Basin, GHL webhook, etc.) -->
-      <form class="abc-form" method="post" action="#">
-        <div class="abc-form__row">
-          <div class="abc-field">
-            <label for="f-name">Name</label>
-            <input id="f-name" name="name" type="text" required>
-          </div>
-          <div class="abc-field">
-            <label for="f-phone">Phone</label>
-            <input id="f-phone" name="phone" type="tel" required>
-          </div>
-        </div>
-        <div class="abc-field">
-          <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" required>
-        </div>
-        <div class="abc-form__row">
-          <div class="abc-field">
-            <label for="f-funds">Funds available for your own deals</label>
-            <select id="f-funds" name="funds" required>
-              <option value="">Select</option>
-              <option>Under £100,000</option>
-              <option>£100,000 – £250,000</option>
-              <option>£250,000 – £500,000</option>
-              <option>£500,000+</option>
-              <option>Unencumbered / low-geared portfolio</option>
-            </select>
-          </div>
-          <div class="abc-field">
-            <label for="f-exp">Auction experience</label>
-            <select id="f-exp" name="experience" required>
-              <option value="">Select</option>
-              <option>None yet</option>
-              <option>Attended, never bid</option>
-              <option>Bought 1–3 lots</option>
-              <option>Bought 4+ lots</option>
-              <option>Buying regularly</option>
-            </select>
-          </div>
-        </div>
-        <div class="abc-field">
-          <label for="f-goal">What are you trying to buy over the next twelve months?</label>
-          <textarea id="f-goal" name="goal" rows="4" placeholder="Type of property, area, and how many."></textarea>
-        </div>
-        <button class="abc-btn abc-btn--gold abc-form__submit" type="submit">Send application <span class="abc-btn__arrow">&rarr;</span></button>
-        <p class="abc-form__small">We'll come back to you within two working days. Everything you tell us stays between you, Jay and Piotr.</p>
-      </form>
+      <!-- Live application form, embedded from Formly: https://form.getformly.com/f/aOt5IQ -->
+      <div class="abc-form-embed">
+        <iframe src="https://form.getformly.com/f/aOt5IQ" title="Auction Buyers Club application form" loading="lazy"></iframe>
+      </div>
+      <p class="abc-form__small">We'll come back to you within two working days. Everything you tell us stays between you, Jay and Piotr. Form not loading? <a href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
     </div>
   </div>
 </section>
