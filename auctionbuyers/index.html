@@ -71,10 +71,15 @@ a{color:inherit}
   display:flex;align-items:center;justify-content:space-between;gap:20px;
 }
 .abc-nav__mark{
+  display:flex;flex-direction:column;gap:4px;
   font-family:var(--display);text-transform:uppercase;color:#fff;
   font-size:19px;letter-spacing:.03em;text-decoration:none;line-height:1;
 }
-.abc-nav__mark span{color:var(--gold)}
+.abc-nav__mark-accent{color:var(--gold)}
+.abc-nav__by{
+  font-family:var(--mono);font-weight:500;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.42);
+}
 .abc-nav__links{display:flex;align-items:center;gap:28px}
 .abc-nav__link{
   font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
@@ -279,7 +284,10 @@ a{color:inherit}
 <!-- ============ NAV ============ -->
 <nav class="abc-nav">
   <div class="abc-nav__in">
-    <a class="abc-nav__mark" href="#top">Auction Buyers <span>Club</span></a>
+    <a class="abc-nav__mark" href="#top">
+      <span class="abc-nav__mark-line">Auction Buyers <span class="abc-nav__mark-accent">Club</span></span>
+      <small class="abc-nav__by">by HAMMERED</small>
+    </a>
     <div class="abc-nav__links">
       <a class="abc-nav__link" href="#tuesday">The calls</a>
       <a class="abc-nav__link" href="#proof">Members</a>
@@ -315,8 +323,8 @@ a{color:inherit}
           <div class="abc-stat__l">Auction lots reviewed<br>by the room each year</div>
         </div>
         <div>
-          <div class="abc-stat__n">2&times;</div>
-          <div class="abc-stat__l">Deal review calls<br>every week</div>
+          <div class="abc-stat__n">88&times;</div>
+          <div class="abc-stat__l">Deal review calls<br>held every year</div>
         </div>
         <div>
           <div class="abc-stat__n">24</div>
