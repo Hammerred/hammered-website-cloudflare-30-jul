@@ -237,23 +237,19 @@ a{color:inherit}
 .abc-card--feature q{margin-top:0;font-size:17.5px}
 
 /* ---------- included grid ---------- */
-.abc-inc{margin-top:clamp(44px,6vw,64px);border-top:1px solid var(--line-light)}
-.abc-inc__row{
-  display:grid;grid-template-columns:220px 1fr;gap:clamp(24px,4vw,56px);
-  padding:30px 0;border-bottom:1px solid var(--line-light);align-items:start;
-}
-@media(max-width:760px){.abc-inc__row{grid-template-columns:1fr;gap:18px}}
-.abc-inc__when{position:relative;padding-left:22px}
-.abc-inc__when:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;background:var(--gold);border-radius:50%}
-.abc-inc__cadence{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(18px,1.9vw,22px);line-height:1.12;color:var(--navy);margin:0}
-.abc-inc__freq{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:rgba(13,22,38,.45);margin:8px 0 0}
-.abc-inc__items{display:grid;gap:22px}
-.abc-inc__h{font-family:var(--display-text);font-weight:700;text-transform:none;font-size:19px;line-height:1.25;color:var(--ink);margin:0 0 6px}
-.abc-inc__item p{margin:0;font-size:15.5px;line-height:1.6;color:rgba(13,22,38,.74);max-width:62ch}
-.abc-inc__item small{
-  display:inline-block;margin-top:9px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;
-  color:#8A6712;border:1px solid rgba(200,154,43,.55);padding:3px 9px;line-height:1.5;
-}
+.abc-inc{margin-top:clamp(40px,5.5vw,60px)}
+.abc-inc__legend{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-light);border-bottom:1px solid var(--line-light)}
+.abc-inc__legend div{padding:16px 18px 16px 0}
+.abc-inc__legend b{display:block;font-family:var(--body);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--navy)}
+.abc-inc__legend span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:rgba(13,22,38,.45);margin-top:5px}
+@media(max-width:760px){.abc-inc__legend{grid-template-columns:repeat(2,1fr)}}
+.abc-inc__list{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,4vw,56px)}
+@media(max-width:760px){.abc-inc__list{grid-template-columns:1fr}}
+.abc-inc__item{display:flex;gap:14px;padding:22px 0;border-top:1px solid var(--line-light)}
+.abc-inc__dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+.abc-inc__h{font-family:var(--display-text);font-weight:700;text-transform:none;font-size:17.5px;line-height:1.28;color:var(--ink);margin:0 0 6px}
+.abc-inc__item p{margin:0;font-size:15px;line-height:1.6;color:rgba(13,22,38,.72)}
+.abc-inc__tag{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#8A6712}
 .abc-inc__close{margin-top:clamp(34px,4vw,46px);font-size:18px;line-height:1.5;color:rgba(13,22,38,.85)}
 .abc-inc__close b{color:#8A6712}
 
@@ -364,7 +360,6 @@ a{color:inherit}
       <a class="abc-nav__link" href="#proof">Members</a>
       <a class="abc-nav__link" href="#included">What's included</a>
       <a class="abc-nav__link" href="#criteria">Who it's for</a>
-      <a class="abc-nav__link" href="#faq">FAQ</a>
       <a class="abc-btn abc-btn--gold" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply <span class="abc-btn__arrow">&rarr;</span></a>
     </div>
   </div>
@@ -556,72 +551,67 @@ a{color:inherit}
     <p class="abc-lede" style="color:rgba(13,22,38,.75);margin-top:22px">Membership isn't a library of things you might use one day. <strong style="color:var(--ink);font-weight:600">Most of it lands on a schedule</strong> &mdash; here it is by how often it reaches you.</p>
 
     <div class="abc-inc">
-      <div class="abc-inc__row">
-        <div class="abc-inc__when">
-          <p class="abc-inc__cadence">Twice a week</p>
-          <p class="abc-inc__freq">TUE + THU, 8:45AM</p>
-        </div>
-        <div class="abc-inc__items">
-          <div class="abc-inc__item">
+      <div class="abc-inc__legend">
+        <div><b>Twice a week</b><span>Tue + Thu, 8:45am</span></div>
+        <div><b>Every day</b><span>Always open</span></div>
+        <div><b>Every quarter</b><span>In person, London</span></div>
+        <div><b>On demand</b><span>The moment you need it</span></div>
+      </div>
+      <div class="abc-inc__list">
+        <div class="abc-inc__item">
+          <span class="abc-inc__dot"></span>
+          <div>
             <h3 class="abc-inc__h">Deal review calls</h3>
             <p>Bring your lots, get a straight answer, hear everyone else's. Ten to fifteen worked through, one at a time.</p>
-            <small>Over 1,000 lots a year</small>
+            <small class="abc-inc__tag">Twice a week &middot; over 1,000 lots a year</small>
           </div>
         </div>
-      </div>
-
-      <div class="abc-inc__row">
-        <div class="abc-inc__when">
-          <p class="abc-inc__cadence">Every day</p>
-          <p class="abc-inc__freq">ALWAYS OPEN</p>
-        </div>
-        <div class="abc-inc__items">
-          <div class="abc-inc__item">
+        <div class="abc-inc__item">
+          <span class="abc-inc__dot"></span>
+          <div>
             <h3 class="abc-inc__h">Direct access to Jay &amp; Piotr</h3>
             <p>The full members' WhatsApp group, plus a private group with just the two of us for anything you'd rather not put in the room.</p>
-            <small>Deals &middot; numbers &middot; second thoughts</small>
+            <small class="abc-inc__tag">Every day</small>
           </div>
-          <div class="abc-inc__item">
+        </div>
+        <div class="abc-inc__item">
+          <span class="abc-inc__dot"></span>
+          <div>
             <h3 class="abc-inc__h">The room itself</h3>
             <p>Twenty-three other active buyers, each bringing their own live deals, specialisms and years in the market.</p>
+            <small class="abc-inc__tag">Every day</small>
           </div>
         </div>
-      </div>
-
-      <div class="abc-inc__row">
-        <div class="abc-inc__when">
-          <p class="abc-inc__cadence">Every quarter</p>
-          <p class="abc-inc__freq">IN PERSON, LONDON</p>
-        </div>
-        <div class="abc-inc__items">
-          <div class="abc-inc__item">
+        <div class="abc-inc__item">
+          <span class="abc-inc__dot"></span>
+          <div>
             <h3 class="abc-inc__h">Boardroom day</h3>
             <p>A full day in person in Central London with invited guests. Troubleshooting, industry insight, and the conversations that don't happen on Zoom.</p>
-            <small>&pound;100 + VAT supplement per meeting, at cost</small>
+            <small class="abc-inc__tag">Every quarter &middot; &pound;100 + VAT supplement per meeting, at cost</small>
           </div>
         </div>
-      </div>
-
-      <div class="abc-inc__row">
-        <div class="abc-inc__when">
-          <p class="abc-inc__cadence">The moment you need it</p>
-          <p class="abc-inc__freq">ON DEMAND</p>
-        </div>
-        <div class="abc-inc__items">
-          <div class="abc-inc__item">
+        <div class="abc-inc__item">
+          <span class="abc-inc__dot"></span>
+          <div>
             <h3 class="abc-inc__h">Roma Finance hunter's facility</h3>
             <p>Available to club members only, subject to underwriting &mdash; through a broker who buys and sells at auction himself.</p>
-            <small>Exclusive to ABC</small>
+            <small class="abc-inc__tag">On demand &middot; exclusive to ABC</small>
           </div>
-          <div class="abc-inc__item">
+        </div>
+        <div class="abc-inc__item">
+          <span class="abc-inc__dot"></span>
+          <div>
             <h3 class="abc-inc__h">The tools</h3>
             <p>On-demand recording of our two-day auction workshop, maximum bid calculator, stamp duty formula, and the rest of what we use ourselves.</p>
-            <small>Plus 25% longer EIG subscription</small>
+            <small class="abc-inc__tag">On demand &middot; plus 25% longer EIG subscription</small>
           </div>
-          <div class="abc-inc__item">
+        </div>
+        <div class="abc-inc__item">
+          <span class="abc-inc__dot"></span>
+          <div>
             <h3 class="abc-inc__h">Our professional network</h3>
             <p>Solicitors, architects, planning consultants, surveyors, accountants. People we use, not a directory we compiled.</p>
-            <small>Plus member rates on live events and the annual retreat</small>
+            <small class="abc-inc__tag">On demand &middot; plus member rates on live events and the annual retreat</small>
           </div>
         </div>
       </div>
@@ -706,40 +696,6 @@ a{color:inherit}
       </div>
     </div>
     <p class="abc-tl__note">Apply to first call: <b>typically under two weeks.</b></p>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="abc-band abc-band--navy" id="faq">
-  <div class="abc-wrap">
-    <p class="abc-eyebrow abc-eyebrow--gold">Before you apply</p>
-    <h2 class="abc-display abc-h2">Questions people actually ask.</h2>
-    <div class="abc-faq">
-      <details class="abc-faq__item">
-        <summary class="abc-faq__q">What actually happens on a call?</summary>
-        <p class="abc-faq__a">Ten to fifteen lots, worked through one at a time. Whoever brought it gets a straight answer — bid or walk, and why. You don't have to say anything if you don't want to; most members learn as much from the lots they didn't bring as the ones they did.</p>
-      </details>
-      <details class="abc-faq__item">
-        <summary class="abc-faq__q">Do I need to have already bought at auction?</summary>
-        <p class="abc-faq__a">No. You need £100k+ available and to be ready to act on it now. Some members have bought a dozen properties at auction; some are about to bid on their first. What matters is that you're not still deciding whether to start.</p>
-      </details>
-      <details class="abc-faq__item">
-        <summary class="abc-faq__q">What if I don't have a lot to bring to my first call?</summary>
-        <p class="abc-faq__a">Come anyway. Watching the room work through other people's lots for a call or two is normal. By your second or third call you'll have something in the current cycle's catalogue worth bringing.</p>
-      </details>
-      <details class="abc-faq__item">
-        <summary class="abc-faq__q">What happens if the interview isn't a fit?</summary>
-        <p class="abc-faq__a">We'll tell you directly, and point you at what to do first — more capital, more deals done, whatever it is. No hard sell either way. Some of our best members applied a second time, a year later.</p>
-      </details>
-      <details class="abc-faq__item">
-        <summary class="abc-faq__q">Is this financial advice?</summary>
-        <p class="abc-faq__a">No. The room gives you its honest read on a lot — what it's worth, what it needs, whether we'd bid — but the decision, the finance and the risk are yours. Nothing said on a call is regulated advice.</p>
-      </details>
-      <details class="abc-faq__item">
-        <summary class="abc-faq__q">What if it's not working after I join?</summary>
-        <p class="abc-faq__a">One month's notice on renewals, no lock-in beyond the six-month minimum. If it isn't right, you tell us and you leave — no exit interview, no hard feelings.</p>
-      </details>
-    </div>
   </div>
 </section>
 
