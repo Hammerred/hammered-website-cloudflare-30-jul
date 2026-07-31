@@ -24,7 +24,7 @@
   --paper-lift:#FAFAF9;
   --line-dark:rgba(255,255,255,.16);
   --line-light:rgba(13,22,38,.14);
-  --display:'Libre Caslon Display',Georgia,'Times New Roman',serif;
+  --display:'Libre Caslon Text',Georgia,'Times New Roman',serif;
   --display-text:'Libre Caslon Text',Georgia,'Times New Roman',serif;
   --body:'Inter',system-ui,-apple-system,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
@@ -46,8 +46,8 @@ a{color:inherit}
 
 /* ---------- type ---------- */
 .abc-display{
-  font-family:var(--display);font-weight:400;text-transform:uppercase;
-  line-height:1.06;letter-spacing:0;margin:0;
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  line-height:1.1;letter-spacing:-.005em;margin:0;
 }
 .abc-eyebrow{
   font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.15em;
@@ -73,7 +73,7 @@ a{color:inherit}
 }
 .abc-nav__mark{
   display:flex;flex-direction:column;gap:4px;
-  font-family:var(--display);text-transform:uppercase;color:#fff;
+  font-family:var(--display);font-weight:700;text-transform:uppercase;color:#fff;
   font-size:19px;letter-spacing:.03em;text-decoration:none;line-height:1;
 }
 .abc-nav__mark-accent{color:var(--gold)}
@@ -107,7 +107,7 @@ a{color:inherit}
 .abc-hero{background:var(--ink);color:#fff;padding:clamp(64px,10vw,120px) 0 0}
 .abc-hero__grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,80px);align-items:end}
 @media(max-width:900px){.abc-hero__grid{grid-template-columns:1fr;align-items:start}}
-.abc-hero__h1{font-size:clamp(38px,5.9vw,76px);color:#fff}
+.abc-hero__h1{font-size:clamp(36px,5.4vw,70px);color:#fff}
 .abc-hero__h1 em{font-style:normal;color:var(--gold);display:block}
 .abc-hero__sub{margin:32px 0 0;font-size:clamp(17px,1.7vw,20px);line-height:1.6;color:rgba(255,255,255,.82);max-width:52ch}
 .abc-hero__meta{
@@ -167,7 +167,7 @@ a{color:inherit}
 .abc-band--dark{background:var(--ink);color:#fff}
 .abc-band--navy{background:var(--navy);color:#fff}
 
-.abc-h2{font-size:clamp(30px,4.1vw,50px);max-width:19ch}
+.abc-h2{font-size:clamp(28px,3.8vw,46px);max-width:19ch}
 .abc-h2--wide{max-width:26ch}
 .abc-h2 em{font-style:normal;color:var(--gold)}
 
@@ -180,14 +180,14 @@ a{color:inherit}
 .abc-prod__head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:end}
 @media(max-width:880px){.abc-prod__head{grid-template-columns:1fr}}
 .abc-prod__note{border-left:2px solid var(--gold);padding-left:22px;font-size:17px;line-height:1.6}
-.abc-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:clamp(44px,6vw,72px);background:var(--line-light)}
+.abc-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:clamp(44px,6vw,72px);background:var(--line-dark);border:1px solid var(--line-dark)}
 @media(max-width:760px){.abc-split{grid-template-columns:1fr}}
-.abc-split__col{background:var(--paper-lift);padding:clamp(28px,4vw,44px)}
-.abc-split__col--dark{background:var(--ink);color:#fff}
+.abc-split__col{background:var(--navy);color:#fff;padding:clamp(28px,4vw,44px)}
+.abc-split__col--dark{background:#16233d;color:#fff}
 .abc-split__t{font-family:var(--body);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 22px}
 .abc-list{list-style:none;margin:0;padding:0}
 .abc-list li{padding:13px 0 13px 28px;position:relative;border-top:1px solid var(--line-light);font-size:16.5px;line-height:1.55}
-.abc-split__col--dark .abc-list li{border-top-color:var(--line-dark)}
+.abc-split__col .abc-list li{border-top-color:var(--line-dark)}
 .abc-list li:first-child{border-top:0}
 .abc-list li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:1px;background:var(--gold)}
 .abc-body-copy p{max-width:84ch;font-size:17.5px;line-height:1.65}
@@ -196,7 +196,7 @@ a{color:inherit}
 .abc-body-copy--cols p+p{margin-top:18px}
 @media(max-width:820px){.abc-body-copy--cols{columns:1}}
 .abc-pull{
-  font-family:var(--display);text-transform:uppercase;font-size:clamp(21px,2.9vw,34px);
+  font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(21px,2.9vw,34px);
   line-height:1.06;margin:clamp(30px,3.4vw,44px) 0 0;max-width:26ch;
 }
 .abc-pull em{font-style:normal;color:var(--gold)}
@@ -209,13 +209,13 @@ a{color:inherit}
 }
 @media(max-width:760px){.abc-proof__banner{grid-template-columns:1fr;gap:26px}}
 .abc-proof__n{font-family:var(--mono);font-weight:600;font-size:clamp(32px,5vw,54px);color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
-.abc-proof__l{font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:12px;line-height:1.6}
+.abc-proof__l{font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:rgba(13,22,38,.62);margin-top:12px;line-height:1.6}
 .abc-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line-dark)}
 @media(max-width:760px){.abc-cards{grid-template-columns:1fr}}
 .abc-card{background:var(--ink);padding:clamp(26px,3.4vw,40px)}
 .abc-card__who{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
-.abc-card__h{font-family:var(--display-text);font-weight:700;text-transform:none;font-size:clamp(20px,2.3vw,27px);line-height:1.22;margin:0 0 16px}
-.abc-card p{color:rgba(255,255,255,.78);font-size:16.5px;margin:0 0 14px}
+.abc-card__h{color:#fff;font-family:var(--display-text);font-weight:700;text-transform:none;font-size:clamp(20px,2.3vw,27px);line-height:1.22;margin:0 0 16px}
+.abc-card p{color:rgba(255,255,255,.8);color:rgba(255,255,255,.78);font-size:16.5px;margin:0 0 14px}
 .abc-card q{display:block;font-family:var(--display-text);font-style:italic;font-weight:400;color:#fff;font-size:18px;line-height:1.5;border-left:2px solid var(--gold);padding-left:18px;margin-top:20px;quotes:none}
 .abc-card--feature{grid-column:1/-1;background:var(--navy)}
 .abc-card--feature .abc-card__h{font-size:clamp(24px,3.4vw,40px);max-width:22ch}
@@ -229,7 +229,7 @@ a{color:inherit}
 @media(max-width:760px){.abc-inc__row{grid-template-columns:1fr;gap:18px}}
 .abc-inc__when{position:relative;padding-left:22px}
 .abc-inc__when:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;background:var(--gold);border-radius:50%}
-.abc-inc__cadence{font-family:var(--display);text-transform:uppercase;font-size:clamp(18px,1.9vw,22px);line-height:1.12;color:var(--gold-bright);margin:0}
+.abc-inc__cadence{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(18px,1.9vw,22px);line-height:1.12;color:var(--gold-bright);margin:0}
 .abc-inc__freq{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:rgba(255,255,255,.42);margin:8px 0 0}
 .abc-inc__items{display:grid;gap:22px}
 .abc-inc__h{font-family:var(--display-text);font-weight:700;text-transform:none;font-size:19px;line-height:1.25;color:#fff;margin:0 0 6px}
@@ -246,12 +246,10 @@ a{color:inherit}
 @media(max-width:860px){.abc-crit{grid-template-columns:1fr}}
 .abc-crit__item{background:#182a4c;padding:clamp(26px,3vw,36px);position:relative}
 .abc-crit__num{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.35);position:absolute;top:clamp(26px,3vw,36px);right:clamp(26px,3vw,36px)}
-.abc-crit__h{margin:0 0 16px;padding-right:44px}
+.abc-crit__h{margin:0 0 14px;padding-right:44px}
 .abc-crit__h span{
-  font-family:var(--body);font-weight:800;font-size:clamp(14.5px,1.55vw,18px);
-  letter-spacing:.02em;text-transform:uppercase;line-height:1.45;
-  background:var(--gold);color:var(--ink);
-  padding:5px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+  font-family:var(--body);font-weight:800;font-size:clamp(17px,1.85vw,21px);
+  letter-spacing:-.005em;line-height:1.2;color:var(--gold-bright);
 }
 .abc-crit__item p{margin:0;color:rgba(255,255,255,.78);font-size:15.5px;line-height:1.6}
 .abc-crit__item p.abc-crit__h{margin-bottom:14px}
@@ -262,8 +260,8 @@ a{color:inherit}
 @media(max-width:560px){.abc-warm{flex-direction:column;align-items:flex-start;gap:12px}}
 
 /* ---------- steps (a real sequence, so numbering earns its place) ---------- */
-.abc-faq{margin-top:clamp(36px,5vw,56px);max-width:860px;border-top:1px solid var(--line-light)}
-.abc-faq__item{border-bottom:1px solid var(--line-light)}
+.abc-faq{margin-top:clamp(36px,5vw,56px);max-width:860px;border-top:1px solid var(--line-dark)}
+.abc-faq__item{border-bottom:1px solid var(--line-dark)}
 .abc-faq__item>summary{
   list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:20px;
   padding:22px 0;font-family:var(--display-text);font-weight:700;
@@ -271,14 +269,14 @@ a{color:inherit}
   transition:color .16s ease;
 }
 .abc-faq__item>summary::-webkit-details-marker{display:none}
-.abc-faq__item>summary:hover{color:var(--navy)}
+.abc-faq__item>summary:hover{color:var(--gold-bright)}
 .abc-faq__item>summary::after{
   content:"+";margin-left:auto;flex-shrink:0;
   font-family:var(--body);font-weight:400;font-size:26px;line-height:1;
   color:var(--gold);transition:transform .22s ease;
 }
 .abc-faq__item[open]>summary::after{content:"+";transform:rotate(45deg)}
-.abc-faq__a{margin:0;padding:0 44px 26px 0;font-size:16.5px;line-height:1.65;color:rgba(13,22,38,.75);max-width:68ch;animation:abc-faq-in .22s ease}
+.abc-faq__a{margin:0;padding:0 44px 26px 0;font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.75);max-width:68ch;animation:abc-faq-in .22s ease}
 @keyframes abc-faq-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
 .abc-tl{display:grid;grid-template-columns:repeat(4,1fr);position:relative;margin-top:clamp(48px,6vw,72px)}
@@ -287,13 +285,13 @@ a{color:inherit}
 .abc-tl__dot{
   width:48px;height:48px;border-radius:50%;background:var(--gold);color:var(--ink);
   font-family:var(--mono);font-weight:600;font-size:15px;display:flex;align-items:center;
-  justify-content:center;margin:0 auto 24px;position:relative;z-index:2;box-shadow:0 0 0 8px var(--ink);
+  justify-content:center;margin:0 auto 24px;position:relative;z-index:2;box-shadow:0 0 0 8px var(--paper);
 }
-.abc-tl__step--last .abc-tl__dot{background:#fff}
-.abc-tl__when{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px}
-.abc-tl__h{font-family:var(--display);text-transform:uppercase;font-size:clamp(17px,1.75vw,21px);color:#fff;margin:0 0 12px;line-height:1.18}
-.abc-tl__step p{margin:0;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.7)}
-.abc-tl__note{margin-top:clamp(40px,5vw,56px);text-align:center;font-family:var(--body);font-size:14px;color:rgba(255,255,255,.55)}
+.abc-tl__step--last .abc-tl__dot{background:var(--ink);color:#fff}
+.abc-tl__when{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9A7415;display:block;margin-bottom:10px}
+.abc-tl__h{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(17px,1.75vw,21px);color:var(--ink);margin:0 0 12px;line-height:1.18}
+.abc-tl__step p{margin:0;font-size:14.5px;line-height:1.6;color:rgba(13,22,38,.72)}
+.abc-tl__note{margin-top:clamp(40px,5vw,56px);text-align:center;font-family:var(--body);font-size:14px;color:rgba(13,22,38,.6)}
 .abc-tl__note b{color:var(--gold-bright);font-weight:600}
 @media(max-width:820px){
   .abc-tl{grid-template-columns:1fr;gap:36px}
@@ -428,11 +426,11 @@ a{color:inherit}
 </section>
 
 <!-- ============ THE PRODUCT ============ -->
-<section class="abc-band abc-band--lift abc-band--tight-b" id="tuesday">
+<section class="abc-band abc-band--dark abc-band--tight-b" id="tuesday">
   <div class="abc-wrap">
     <div class="abc-prod__head">
       <div>
-        <p class="abc-eyebrow abc-eyebrow--navy">Tuesday and Thursday, 8:45am</p>
+        <p class="abc-eyebrow abc-eyebrow--gold">Tuesday and Thursday, 8:45am</p>
         <h2 class="abc-display abc-h2">We review over <em>1,000</em> auction lots a year. Most buyers manage five.</h2>
       </div>
       <p class="abc-prod__note">Ten to fifteen lots a call. Two calls a week. Every week. Not a webinar and not a lecture. A room of active buyers going through real properties that real people are about to bid on.</p>
@@ -471,9 +469,9 @@ a{color:inherit}
 </section>
 
 <!-- ============ PROOF ============ -->
-<section class="abc-band abc-band--dark" id="proof">
+<section class="abc-band abc-band--paper" id="proof">
   <div class="abc-wrap">
-    <p class="abc-eyebrow abc-eyebrow--gold">What the room actually does</p>
+    <p class="abc-eyebrow abc-eyebrow--navy">What the room actually does</p>
     <h2 class="abc-display abc-h2 abc-h2--wide" style="margin-bottom:clamp(40px,5vw,64px)">Twenty-four people. Thirty-three million pounds of property.</h2>
 
     <!-- DATE-STAMP THIS. Refresh annually. A stale figure is worse than none. -->
@@ -520,9 +518,9 @@ a{color:inherit}
 </section>
 
 <!-- ============ WHO'S IN THE ROOM ============ -->
-<section class="abc-band abc-band--paper">
+<section class="abc-band abc-band--navy">
   <div class="abc-wrap">
-    <p class="abc-eyebrow abc-eyebrow--navy">The room</p>
+    <p class="abc-eyebrow abc-eyebrow--gold">The room</p>
     <h2 class="abc-display abc-h2" style="margin-bottom:34px">Twenty-four people, and we interview every one of them.</h2>
     <div class="abc-body-copy">
       <p>Members come from banking, medicine, professional sport, the trades and full-time property. Some have been buying at auction for twenty years. Some bought their first lot after joining.</p>
@@ -651,9 +649,9 @@ a{color:inherit}
 </section>
 
 <!-- ============ HOW TO JOIN ============ -->
-<section class="abc-band abc-band--dark">
+<section class="abc-band abc-band--paper">
   <div class="abc-wrap">
-    <p class="abc-eyebrow abc-eyebrow--gold">The process</p>
+    <p class="abc-eyebrow abc-eyebrow--navy">The process</p>
     <h2 class="abc-display abc-h2">How you join.</h2>
     <div class="abc-tl">
       <div class="abc-tl__step">
@@ -694,9 +692,9 @@ a{color:inherit}
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="abc-band abc-band--lift" id="faq">
+<section class="abc-band abc-band--navy" id="faq">
   <div class="abc-wrap">
-    <p class="abc-eyebrow abc-eyebrow--navy">Before you apply</p>
+    <p class="abc-eyebrow abc-eyebrow--gold">Before you apply</p>
     <h2 class="abc-display abc-h2">Questions people actually ask.</h2>
     <div class="abc-faq">
       <details class="abc-faq__item">
