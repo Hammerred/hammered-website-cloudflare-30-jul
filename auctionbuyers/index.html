@@ -221,20 +221,20 @@ a{color:inherit}
 .abc-card p{color:rgba(13,22,38,.72);font-size:16px;line-height:1.62;margin:0 0 14px}
 .abc-card q{display:block;font-family:var(--display-text);font-style:italic;font-weight:400;color:var(--ink);font-size:17.5px;line-height:1.5;border-left:2px solid var(--gold);padding-left:20px;margin-top:20px;quotes:none}
 
-/* the walk-away story runs as a full-width pull quote, not a card */
+/* the walk-away story: same card treatment as Matthew/Susan, just full-width and marginally larger */
 .abc-card--feature{
-  grid-column:1/-1;border-top:0;padding-top:0;
+  grid-column:1/-1;
   margin-bottom:clamp(50px,6vw,86px);
   display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,72px);align-items:start;
 }
 @media(max-width:860px){.abc-card--feature{grid-template-columns:1fr;gap:24px}}
 .abc-card--feature .abc-card__who{grid-column:1/-1;margin-bottom:6px}
 .abc-card--feature .abc-card__h{
-  font-size:clamp(21px,2.4vw,27px);line-height:1.28;max-width:22ch;margin:0;
+  font-size:clamp(20px,2.1vw,25px);line-height:1.28;max-width:22ch;margin:0;
   font-family:var(--display-text);text-transform:none;font-weight:700;letter-spacing:-.003em;
 }
-.abc-card--feature p{margin:0 0 18px;font-size:17px}
-.abc-card--feature q{margin-top:0;font-size:19px}
+.abc-card--feature p{margin:0 0 14px;font-size:16px}
+.abc-card--feature q{margin-top:0;font-size:17.5px}
 
 /* ---------- included grid ---------- */
 .abc-inc{margin-top:clamp(44px,6vw,64px);border-top:1px solid var(--line-light)}
