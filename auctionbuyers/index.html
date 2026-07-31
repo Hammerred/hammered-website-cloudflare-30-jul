@@ -216,13 +216,25 @@ a{color:inherit}
 .abc-card--feature .abc-card__h{font-size:clamp(24px,3.4vw,40px);max-width:22ch}
 
 /* ---------- included grid ---------- */
-.abc-inc{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line-light);margin-top:clamp(44px,6vw,64px)}
-@media(max-width:900px){.abc-inc{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.abc-inc{grid-template-columns:1fr}}
-.abc-inc__cell{background:var(--paper-lift);padding:clamp(24px,3vw,34px);min-height:200px}
-.abc-inc__h{font-family:var(--display-text);font-weight:700;text-transform:none;font-size:21px;line-height:1.2;margin:0 0 14px}
-.abc-inc__cell p{margin:0;font-size:16px;line-height:1.6;color:rgba(13,22,38,.78)}
-.abc-inc__cell small{display:block;margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:rgba(13,22,38,.5);line-height:1.6}
+.abc-inc{margin-top:clamp(44px,6vw,64px);border-top:1px solid var(--line-dark)}
+.abc-inc__row{
+  display:grid;grid-template-columns:220px 1fr;gap:clamp(24px,4vw,56px);
+  padding:30px 0;border-bottom:1px solid var(--line-dark);align-items:start;
+}
+@media(max-width:760px){.abc-inc__row{grid-template-columns:1fr;gap:18px}}
+.abc-inc__when{position:relative;padding-left:22px}
+.abc-inc__when:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;background:var(--gold);border-radius:50%}
+.abc-inc__cadence{font-family:var(--display);text-transform:uppercase;font-size:clamp(18px,1.9vw,22px);line-height:1.12;color:var(--gold-bright);margin:0}
+.abc-inc__freq{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:rgba(255,255,255,.42);margin:8px 0 0}
+.abc-inc__items{display:grid;gap:22px}
+.abc-inc__h{font-family:var(--display-text);font-weight:700;text-transform:none;font-size:19px;line-height:1.25;color:#fff;margin:0 0 6px}
+.abc-inc__item p{margin:0;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.74);max-width:62ch}
+.abc-inc__item small{
+  display:inline-block;margin-top:9px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+  color:var(--gold);border:1px solid rgba(200,154,43,.4);padding:3px 9px;line-height:1.5;
+}
+.abc-inc__close{margin-top:clamp(34px,4vw,46px);font-size:18px;line-height:1.5;color:rgba(255,255,255,.85)}
+.abc-inc__close b{color:var(--gold-bright)}
 
 /* ---------- criteria ---------- */
 .abc-crit{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line-dark);border:1px solid var(--line-dark);margin-bottom:2px}
@@ -546,43 +558,85 @@ a{color:inherit}
 </section>
 
 <!-- ============ WHAT'S INCLUDED ============ -->
-<section class="abc-band abc-band--lift" id="included">
+<section class="abc-band abc-band--dark" id="included">
   <div class="abc-wrap">
-    <p class="abc-eyebrow abc-eyebrow--navy">Membership</p>
-    <h2 class="abc-display abc-h2 abc-h2--wide">What you get, beyond the calls.</h2>
+    <p class="abc-eyebrow abc-eyebrow--gold">Membership</p>
+    <h2 class="abc-display abc-h2 abc-h2--wide">What you get, <em>and how often you get it.</em></h2>
+    <p class="abc-lede" style="color:rgba(255,255,255,.75);margin-top:22px">Membership isn't a library of things you might use one day. <strong style="color:#fff;font-weight:600">Most of it lands on a schedule</strong> &mdash; here it is by how often it reaches you.</p>
 
     <div class="abc-inc">
-      <div class="abc-inc__cell">
-        <h3 class="abc-inc__h">Deal review calls</h3>
-        <p>Tuesday and Thursday, 8:45am. Bring your lots, get a straight answer, hear everyone else's.</p>
-        <small>Over 1,000 lots a year</small>
+      <div class="abc-inc__row">
+        <div class="abc-inc__when">
+          <p class="abc-inc__cadence">Twice a week</p>
+          <p class="abc-inc__freq">TUE + THU, 8:45AM</p>
+        </div>
+        <div class="abc-inc__items">
+          <div class="abc-inc__item">
+            <h3 class="abc-inc__h">Deal review calls</h3>
+            <p>Bring your lots, get a straight answer, hear everyone else's. Ten to fifteen worked through, one at a time.</p>
+            <small>Over 1,000 lots a year</small>
+          </div>
+        </div>
       </div>
-      <div class="abc-inc__cell">
-        <h3 class="abc-inc__h">Direct access to Jay &amp; Piotr</h3>
-        <p>The full members' WhatsApp group, plus a private group with just the two of us for anything you'd rather not put in the room.</p>
-        <small>Deals · numbers · second thoughts</small>
+
+      <div class="abc-inc__row">
+        <div class="abc-inc__when">
+          <p class="abc-inc__cadence">Every day</p>
+          <p class="abc-inc__freq">ALWAYS OPEN</p>
+        </div>
+        <div class="abc-inc__items">
+          <div class="abc-inc__item">
+            <h3 class="abc-inc__h">Direct access to Jay &amp; Piotr</h3>
+            <p>The full members' WhatsApp group, plus a private group with just the two of us for anything you'd rather not put in the room.</p>
+            <small>Deals &middot; numbers &middot; second thoughts</small>
+          </div>
+          <div class="abc-inc__item">
+            <h3 class="abc-inc__h">The room itself</h3>
+            <p>Twenty-three other active buyers, most of whom have already made the mistake you're about to.</p>
+          </div>
+        </div>
       </div>
-      <div class="abc-inc__cell">
-        <h3 class="abc-inc__h">Quarterly Boardroom Day</h3>
-        <p>A full day in person in Central London with invited guests. Troubleshooting, industry insight, and the conversations that don't happen on Zoom.</p>
-        <small>£100 + VAT supplement per meeting, at cost</small>
+
+      <div class="abc-inc__row">
+        <div class="abc-inc__when">
+          <p class="abc-inc__cadence">Every quarter</p>
+          <p class="abc-inc__freq">IN PERSON, LONDON</p>
+        </div>
+        <div class="abc-inc__items">
+          <div class="abc-inc__item">
+            <h3 class="abc-inc__h">Boardroom day</h3>
+            <p>A full day in person in Central London with invited guests. Troubleshooting, industry insight, and the conversations that don't happen on Zoom.</p>
+            <small>&pound;100 + VAT supplement per meeting, at cost</small>
+          </div>
+        </div>
       </div>
-      <div class="abc-inc__cell">
-        <h3 class="abc-inc__h">Roma Finance Hunter's Facility</h3>
-        <p>Available to club members only, subject to underwriting. Plus a broker who buys and sells at auction himself.</p>
-        <small>Exclusive to ABC</small>
-      </div>
-      <div class="abc-inc__cell">
-        <h3 class="abc-inc__h">The tools</h3>
-        <p>On-demand recording of our two-day auction workshop, maximum bid calculator, stamp duty formula, and the rest of what we use ourselves.</p>
-        <small>Plus 25% longer EIG subscription</small>
-      </div>
-      <div class="abc-inc__cell">
-        <h3 class="abc-inc__h">Our professional network</h3>
-        <p>Solicitors, architects, planning consultants, surveyors, accountants. People we use, not a directory we compiled.</p>
-        <small>Plus member rates on live events and the annual retreat</small>
+
+      <div class="abc-inc__row">
+        <div class="abc-inc__when">
+          <p class="abc-inc__cadence">The moment you need it</p>
+          <p class="abc-inc__freq">ON DEMAND</p>
+        </div>
+        <div class="abc-inc__items">
+          <div class="abc-inc__item">
+            <h3 class="abc-inc__h">Roma Finance hunter's facility</h3>
+            <p>Available to club members only, subject to underwriting &mdash; through a broker who buys and sells at auction himself.</p>
+            <small>Exclusive to ABC</small>
+          </div>
+          <div class="abc-inc__item">
+            <h3 class="abc-inc__h">The tools</h3>
+            <p>On-demand recording of our two-day auction workshop, maximum bid calculator, stamp duty formula, and the rest of what we use ourselves.</p>
+            <small>Plus 25% longer EIG subscription</small>
+          </div>
+          <div class="abc-inc__item">
+            <h3 class="abc-inc__h">Our professional network</h3>
+            <p>Solicitors, architects, planning consultants, surveyors, accountants. People we use, not a directory we compiled.</p>
+            <small>Plus member rates on live events and the annual retreat</small>
+          </div>
+        </div>
       </div>
     </div>
+
+    <p class="abc-inc__close">Every one of these exists for the same reason: <b>so the next lot you bid on is the right one.</b></p>
   </div>
 </section>
 
