@@ -225,6 +225,12 @@ a{color:inherit}
 .abc-crit__item p{margin:0;color:rgba(255,255,255,.8);font-size:16.5px;line-height:1.62}
 
 /* ---------- steps (a real sequence, so numbering earns its place) ---------- */
+.abc-faq{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px) clamp(40px,5vw,64px);margin-top:clamp(36px,5vw,56px)}
+@media(max-width:800px){.abc-faq{grid-template-columns:1fr}}
+.abc-faq__item{border-top:1px solid var(--line-light);padding-top:22px}
+.abc-faq__q{font-family:var(--display);text-transform:uppercase;font-size:clamp(18px,2vw,22px);line-height:1.15;margin:0 0 10px}
+.abc-faq__a{margin:0;font-size:16.5px;line-height:1.6;color:rgba(13,22,38,.78);max-width:52ch}
+
 .abc-steps{counter-reset:abcstep;margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--line-light)}
 .abc-step{
   counter-increment:abcstep;display:grid;grid-template-columns:70px 1fr;
@@ -279,6 +285,7 @@ a{color:inherit}
       <a class="abc-nav__link" href="#proof">Members</a>
       <a class="abc-nav__link" href="#included">What's included</a>
       <a class="abc-nav__link" href="#criteria">Who it's for</a>
+      <a class="abc-nav__link" href="#faq">FAQ</a>
       <a class="abc-btn abc-btn--gold" href="#apply">Apply <span class="abc-btn__arrow">&rarr;</span></a>
     </div>
   </div>
@@ -567,6 +574,40 @@ a{color:inherit}
           <h3 class="abc-step__h">You're in</h3>
           <p>Added to the WhatsApp group the same day. First call the following Tuesday or Thursday. Bring a lot.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="abc-band abc-band--lift" id="faq">
+  <div class="abc-wrap">
+    <p class="abc-eyebrow abc-eyebrow--navy">Before you apply</p>
+    <h2 class="abc-display abc-h2">Questions people actually ask.</h2>
+    <div class="abc-faq">
+      <div class="abc-faq__item">
+        <h3 class="abc-faq__q">What actually happens on a call?</h3>
+        <p class="abc-faq__a">Ten to fifteen lots, worked through one at a time. Whoever brought it gets a straight answer — bid or walk, and why. You don't have to say anything if you don't want to; most members learn as much from the lots they didn't bring as the ones they did.</p>
+      </div>
+      <div class="abc-faq__item">
+        <h3 class="abc-faq__q">Do I need to have already bought at auction?</h3>
+        <p class="abc-faq__a">No. You need £100k+ available and to be ready to act on it now. Some members have bought a dozen properties at auction; some are about to bid on their first. What matters is that you're not still deciding whether to start.</p>
+      </div>
+      <div class="abc-faq__item">
+        <h3 class="abc-faq__q">What if I don't have a lot to bring to my first call?</h3>
+        <p class="abc-faq__a">Come anyway. Watching the room work through other people's lots for a call or two is normal. By your second or third call you'll have something in the current cycle's catalogue worth bringing.</p>
+      </div>
+      <div class="abc-faq__item">
+        <h3 class="abc-faq__q">What happens if the interview isn't a fit?</h3>
+        <p class="abc-faq__a">We'll tell you directly, and point you at what to do first — more capital, more deals done, whatever it is. No hard sell either way. Some of our best members applied a second time, a year later.</p>
+      </div>
+      <div class="abc-faq__item">
+        <h3 class="abc-faq__q">Is this financial advice?</h3>
+        <p class="abc-faq__a">No. The room gives you its honest read on a lot — what it's worth, what it needs, whether we'd bid — but the decision, the finance and the risk are yours. Nothing said on a call is regulated advice.</p>
+      </div>
+      <div class="abc-faq__item">
+        <h3 class="abc-faq__q">What if it's not working after I join?</h3>
+        <p class="abc-faq__a">One month's notice on renewals, no lock-in beyond the six-month minimum. If it isn't right, you tell us and you leave — no exit interview, no hard feelings.</p>
       </div>
     </div>
   </div>
