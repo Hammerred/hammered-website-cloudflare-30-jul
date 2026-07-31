@@ -167,6 +167,15 @@ a{color:inherit}
 .abc-band--dark{background:var(--ink);color:#fff}
 .abc-band--navy{background:var(--navy);color:#fff}
 
+/* ---------- placeholder photography ---------- */
+#tuesday{position:relative;background-image:linear-gradient(rgba(13,22,38,.93),rgba(13,22,38,.96)),url(images/room.jpg);background-size:cover;background-position:center}
+#apply{position:relative;background-image:linear-gradient(rgba(13,22,38,.92),rgba(13,22,38,.95)),url(images/document.jpg);background-size:cover;background-position:center top}
+.abc-inc-layout{display:grid;grid-template-columns:1fr 300px;gap:clamp(32px,4vw,56px);align-items:start}
+@media(max-width:960px){.abc-inc-layout{grid-template-columns:1fr}}
+.abc-inc-photo{position:sticky;top:100px}
+.abc-inc-photo img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;filter:grayscale(12%) contrast(1.04)}
+@media(max-width:960px){.abc-inc-photo{position:static;margin-top:32px}}
+
 .abc-h2{font-size:clamp(28px,3.8vw,46px);max-width:19ch}
 .abc-h2--wide{max-width:26ch}
 .abc-h2 em{font-style:normal;color:var(--gold)}
@@ -575,7 +584,8 @@ a{color:inherit}
 
 <!-- ============ WHAT'S INCLUDED ============ -->
 <section class="abc-band abc-band--paper" id="included">
-  <div class="abc-wrap">
+  <div class="abc-wrap abc-inc-layout">
+  <div class="abc-inc-main">
     <p class="abc-eyebrow abc-eyebrow--navy">Membership</p>
     <h2 class="abc-display abc-h2 abc-h2--wide">What you get, <em>and how often you get it.</em></h2>
     <p class="abc-lede" style="color:rgba(13,22,38,.75);margin-top:22px">Membership isn't a library of things you might use one day. <strong style="color:var(--ink);font-weight:600">Most of it lands on a schedule</strong> &mdash; here it is by how often it reaches you.</p>
@@ -648,6 +658,8 @@ a{color:inherit}
     </div>
 
     <p class="abc-inc__close">Every one of these exists for the same reason: <b>so the next lot you bid on is the right one.</b></p>
+  </div>
+  <div class="abc-inc-photo"><img src="images/london.jpg" alt=""></div>
   </div>
 </section>
 
