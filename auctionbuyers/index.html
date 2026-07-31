@@ -247,6 +247,9 @@ a{color:inherit}
 @media(max-width:760px){.abc-inc__list{grid-template-columns:1fr}}
 .abc-inc__item{display:flex;gap:14px;padding:22px 0;border-top:1px solid var(--line-light)}
 .abc-inc__dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+.abc-inc__item--wide{grid-column:1/-1;justify-content:center;text-align:center}
+.abc-inc__item--wide .abc-inc__dot{display:none}
+.abc-inc__item--wide>div{max-width:46ch}
 .abc-inc__h{font-family:var(--display-text);font-weight:700;text-transform:none;font-size:17.5px;line-height:1.28;color:var(--ink);margin:0 0 6px}
 .abc-inc__item p{margin:0;font-size:15px;line-height:1.6;color:rgba(13,22,38,.72)}
 .abc-inc__tag{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#8A6712}
@@ -254,22 +257,21 @@ a{color:inherit}
 .abc-inc__close b{color:#8A6712}
 
 /* ---------- criteria ---------- */
-.abc-crit{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line-dark);border:1px solid var(--line-dark);margin-bottom:2px}
-@media(max-width:860px){.abc-crit{grid-template-columns:1fr}}
-.abc-crit__item{background:#182a4c;padding:clamp(26px,3vw,36px);position:relative}
-.abc-crit__num{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.35);position:absolute;top:clamp(26px,3vw,36px);right:clamp(26px,3vw,36px)}
-.abc-crit__h{margin:0 0 14px;padding-right:44px}
+.abc-crit{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-dark);border-left:1px solid var(--line-dark)}
+@media(max-width:760px){.abc-crit{grid-template-columns:1fr}}
+.abc-crit__item{padding:clamp(32px,4vw,48px);border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.abc-crit__num{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.32);display:block;margin-bottom:16px}
+.abc-crit__h{margin:0 0 14px}
 .abc-crit__h span{
-  font-family:var(--body);font-weight:800;font-size:clamp(17px,1.85vw,21px);
-  letter-spacing:-.005em;line-height:1.2;color:var(--gold-bright);
+  font-family:var(--display-text);font-weight:700;font-style:normal;font-size:clamp(20px,2vw,24px);
+  letter-spacing:-.003em;line-height:1.3;color:var(--gold-bright);max-width:18ch;display:inline-block;
 }
-.abc-crit__item p{margin:0;color:rgba(255,255,255,.78);font-size:15.5px;line-height:1.6}
+.abc-crit__item p{margin:0;color:rgba(255,255,255,.68);font-size:15px;line-height:1.65;max-width:38ch}
 .abc-crit__item p.abc-crit__h{margin-bottom:14px}
-.abc-warm{border:1px solid var(--gold);background:rgba(200,154,43,.08);padding:clamp(24px,3vw,32px) clamp(26px,3vw,36px);display:flex;gap:24px;align-items:center}
-.abc-warm__mark{font-family:var(--body);font-size:clamp(32px,4vw,44px);color:var(--gold);line-height:1;flex-shrink:0}
-.abc-warm p{font-family:var(--body);font-size:16.5px;line-height:1.6;color:#fff;margin:0}
+.abc-warm{padding:22px clamp(32px,4vw,48px);border-left:1px solid var(--line-dark);border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.abc-warm__mark{display:none}
+.abc-warm p{font-family:var(--body);font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.68);margin:0}
 .abc-warm b{color:var(--gold-bright)}
-@media(max-width:560px){.abc-warm{flex-direction:column;align-items:flex-start;gap:12px}}
 
 /* ---------- steps (a real sequence, so numbering earns its place) ---------- */
 .abc-faq{margin-top:clamp(36px,5vw,56px);max-width:860px;border-top:1px solid var(--line-dark)}
@@ -606,7 +608,7 @@ a{color:inherit}
             <small class="abc-inc__tag">On demand &middot; plus 25% longer EIG subscription</small>
           </div>
         </div>
-        <div class="abc-inc__item">
+        <div class="abc-inc__item abc-inc__item--wide">
           <span class="abc-inc__dot"></span>
           <div>
             <h3 class="abc-inc__h">Our professional network</h3>
