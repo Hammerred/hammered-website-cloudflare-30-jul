@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auction Buyers Club | 24 members. £18m bought, £15m sold.</title>
+<meta name="description" content="A capped community of 24 UK investors who buy at auction. Members bought £18m and sold £15m of property last year. Twice-weekly deal reviews, over 1,000 lots assessed a year. Established 2020.">
+<meta property="og:title" content="Auction Buyers Club">
+<meta property="og:description" content="24 members. £18m bought and £15m sold at auction in the last twelve months. Bring any lot to the room before you bid on it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://auctionbuyers.club/v2/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --ink:       #0D1626;
+  --navy:      #1F355E;
+  --gold:      #C89A2B;
+  --gold-lt:   #E4B84C;
+  --gold-dk:   #8A6712;
+  --brick:     #B34A3A;
+  --tape-neg:  #F09A8B;
+  --paper:     #F1F0EC;
+  --paper-lift:#FAFAF9;
+  --rule-dark: rgba(255,255,255,.14);
+  --rule-light:rgba(13,22,38,.14);
+  --pd-x: clamp(24px,4vw,64px);
+  --pd-y: clamp(72px,9vw,120px);
+}
+
+/* ── RESET ── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:var(--gold-dk);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:3px solid var(--gold-lt);outline-offset:3px}
+
+/* ── PAGE WRAPPER ── */
+.v2{max-width:1600px;margin:0 auto;background:var(--paper)}
+
+/* ── NAV ── */
+.nav{
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px var(--pd-x);
+  position:sticky;top:0;z-index:60;
+}
+.nav__mark{
+  font-family:'Libre Caslon Text',serif;font-weight:700;font-size:18px;
+  color:#fff;line-height:1.1;text-decoration:none;
+}
+.nav__mark span{color:var(--gold)}
+.nav__by{
+  font-family:'Inter',sans-serif;font-weight:500;font-size:9.5px;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);display:block;margin-top:4px;
+}
+.nav__links{
+  display:flex;align-items:center;gap:32px;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.55);
+}
+.nav__links a{color:rgba(255,255,255,.55)}
+.nav__links a:hover{color:#fff}
+.nav__apply{
+  border:1px solid rgba(255,255,255,.35);color:#fff;
+  padding:12px 22px;letter-spacing:.06em;
+}
+.nav__apply:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:820px){[data-navlink]{display:none}}
+
+/* ── LOT TAPE ── */
+.tape{
+  background:var(--navy);
+  border-top:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);
+  display:flex;overflow:hidden;
+}
+.tape__flag{
+  background:var(--gold);color:var(--ink);
+  font-family:'Inter',sans-serif;font-weight:700;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:11px 20px;flex-shrink:0;display:flex;align-items:center;
+  position:relative;z-index:2;box-shadow:0 0 0 1px var(--gold);
+}
+.tape__track{
+  display:flex;width:max-content;
+  animation:tape 110s linear infinite;
+}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:620px){.tape__track{animation-duration:70s}}
+@media(prefers-reduced-motion:reduce){
+  .tape__track{animation:none;width:100%;overflow-x:auto}
+  .tape__track-dup{display:none}
+}
+.tape__row{display:flex;flex-shrink:0}
+.lot{
+  padding:11px 26px;border-right:1px solid rgba(255,255,255,.12);
+  white-space:nowrap;font-family:'IBM Plex Mono',monospace;
+  font-size:12.5px;color:rgba(255,255,255,.9);
+}
+.lot__yes{color:var(--gold-lt)}
+.lot__no{color:var(--tape-neg)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--ink);color:#fff;
+  padding:clamp(80px,11vw,130px) var(--pd-x) 0;
+}
+.hero h1{
+  font-family:'Libre Caslon Display',serif;font-weight:400;
+  font-size:clamp(46px,8.4vw,124px);line-height:.95;
+  letter-spacing:-.026em;max-width:20ch;text-wrap:pretty;
+}
+.hero h1 .gold{color:var(--gold)}
+.hero__body{
+  display:flex;flex-wrap:wrap;align-items:flex-end;
+  justify-content:space-between;gap:clamp(32px,6vw,80px);
+  padding:clamp(60px,9vw,110px) 0 44px;
+}
+.hero__lead{
+  font-family:'Libre Caslon Text',serif;
+  font-size:clamp(19px,2vw,23px);line-height:1.5;
+  color:rgba(255,255,255,.72);max-width:42ch;
+}
+.hero__cta{display:flex;flex-direction:column;gap:16px;flex-shrink:0}
+.btn{
+  display:inline-block;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:18px 30px;text-decoration:none;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.btn--gold{background:var(--gold);color:var(--ink)}
+.btn--gold:hover{background:var(--gold-lt)}
+.btn--outline{
+  border:1px solid rgba(255,255,255,.35);color:#fff;
+  background:transparent;
+}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero__places{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+}
+.hero__credits{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;
+  border-top:1px solid var(--rule-dark);padding:24px 0 30px;
+  font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,.5);
+}
+.hero__credits a{color:#fff}
+.hero__credits em{font-family:'Libre Caslon Text',serif;font-style:italic}
+.hero__stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  border-top:1px solid var(--rule-dark);
+}
+.hero__stat{padding:30px clamp(20px,2vw,28px) 34px 0;border-right:1px solid rgba(255,255,255,.12)}
+.hero__stat:last-child{border-right:0}
+.hero__stat-n{
+  font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:clamp(26px,2.6vw,36px);line-height:1;
+}
+.hero__stat-n--gold{color:var(--gold)}
+.hero__stat-n--white{color:#fff}
+.hero__stat-l{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-top:12px;line-height:1.55;
+}
+
+/* ── VIDEO ── */
+.video{padding:var(--pd-y) var(--pd-x) 0}
+.video__intro{max-width:640px}
+.video__label{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(13,22,38,.5);margin-bottom:20px;
+}
+.video__hed{
+  font-family:'Libre Caslon Text',serif;
+  font-size:clamp(20px,2.2vw,26px);line-height:1.45;
+  color:var(--ink);margin-bottom:40px;
+}
+.video__frame{
+  position:relative;padding-top:47%;
+  background:var(--ink);
+  margin-bottom:var(--pd-y);
+}
+.video__frame iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0;
+}
+
+/* ── THE CALLS ── */
+.calls{padding:0 var(--pd-x) var(--pd-y)}
+.section-label{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;
+  margin-bottom:24px;
+}
+.section-label--gold{color:var(--gold-dk)}
+.section-label--ink{color:rgba(13,22,38,.5)}
+.h2-display{
+  font-family:'Libre Caslon Display',serif;font-weight:400;
+  font-size:clamp(32px,5vw,68px);line-height:1.02;
+  letter-spacing:-.02em;text-wrap:pretty;
+}
+.h2-display--26{max-width:26ch}
+.h2-display--28{max-width:28ch}
+.h2-dk{color:var(--gold-dk)}
+.calls__h2{margin-bottom:clamp(48px,6vw,80px)}
+/* exchange diagram */
+.exchange{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  gap:0 clamp(24px,4vw,64px);align-items:stretch;
+}
+.exchange__col{}
+.exchange__col-label{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+  border-top:1px solid var(--ink);padding-top:14px;margin-bottom:6px;
+}
+.exchange__col--right .exchange__col-label{text-align:right}
+.exchange__item{
+  font-family:'Libre Caslon Text',serif;
+  font-size:clamp(16px,1.6vw,19px);line-height:1.4;
+  padding:16px 0;border-bottom:1px solid var(--rule-light);
+}
+.exchange__col--right .exchange__item{text-align:right}
+.exchange__axis{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:clamp(40px,5vw,72px);position:relative;
+}
+.exchange__axis-line{
+  position:absolute;top:0;bottom:0;width:1px;background:rgba(13,22,38,.2);
+}
+.exchange__axis-arrow{
+  position:relative;background:var(--paper);padding:12px 0;
+  font-family:'Inter',sans-serif;font-size:clamp(20px,2.4vw,30px);
+  color:var(--gold);line-height:1;
+}
+@media(max-width:860px){
+  .exchange{grid-template-columns:1fr}
+  .exchange__axis{display:none}
+  .exchange__col--right .exchange__col-label{text-align:left}
+  .exchange__col--right .exchange__item{text-align:left}
+  .exchange__col--right{margin-top:28px}
+}
+/* body copy + pull */
+.calls__body{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:clamp(24px,3vw,44px) clamp(36px,5vw,80px);
+  margin-top:clamp(44px,5vw,68px);
+}
+.calls__body p{
+  font-family:'Inter',sans-serif;font-size:16px;line-height:1.68;
+  color:rgba(13,22,38,.78);
+}
+.calls__body p+p{margin-top:16px}
+.pull{
+  border-top:1px solid rgba(13,22,38,.5);
+  margin-top:clamp(44px,5vw,68px);padding-top:30px;
+}
+.pull p{
+  font-family:'Libre Caslon Display',serif;font-weight:400;
+  font-size:clamp(30px,4.6vw,62px);line-height:1.03;letter-spacing:-.022em;
+}
+.pull .pull-dk{color:var(--gold-dk)}
+
+/* ── PROOF ── */
+.proof{
+  background:var(--paper-lift);
+  border-top:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light);
+  padding:var(--pd-y) var(--pd-x);
+}
+.proof__h2{margin-bottom:clamp(48px,6vw,72px)}
+/* lead story */
+.proof__lead{
+  max-width:96ch;border-top:1px solid rgba(13,22,38,.5);padding-top:34px;
+  margin-top:clamp(56px,7vw,88px);
+}
+.proof__lead-who{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--gold-dk);
+  margin-bottom:20px;
+}
+.proof__lead-h3{
+  font-family:'Libre Caslon Display',serif;font-weight:400;
+  font-size:clamp(24px,3vw,40px);line-height:1.14;letter-spacing:-.014em;
+  max-width:40ch;text-wrap:pretty;margin-bottom:22px;
+}
+.proof__lead-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:clamp(32px,5vw,72px);align-items:start;
+}
+.proof__lead-grid p:first-child{
+  font-family:'Inter',sans-serif;font-size:16.5px;line-height:1.7;
+  color:rgba(13,22,38,.75);
+}
+/* member cards */
+.proof__cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:clamp(36px,5vw,72px);margin-top:clamp(48px,6vw,72px);
+}
+.proof__card{border-top:1px solid var(--rule-light);padding-top:30px}
+.proof__card-who{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:16px;
+}
+.proof__card-h3{
+  font-family:'Libre Caslon Text',serif;font-weight:700;
+  font-size:22px;line-height:1.25;margin-bottom:14px;
+}
+.proof__card p{
+  font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.65;
+  color:rgba(13,22,38,.72);margin-bottom:20px;
+}
+q{
+  display:block;font-family:'Libre Caslon Text',serif;font-style:italic;
+  font-size:17.5px;line-height:1.5;color:var(--ink);
+  border-left:2px solid var(--gold);padding-left:20px;
+  margin:0;quotes:none;
+}
+/* figures */
+.proof__figures{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  margin-top:clamp(56px,7vw,88px);
+  border-top:1px solid var(--ink);border-bottom:1px solid var(--rule-light);
+}
+.proof__fig{padding:34px clamp(22px,3vw,44px) 38px 0;border-right:1px solid var(--rule-light)}
+.proof__fig:first-child{padding-left:0}
+.proof__fig:not(:first-child){padding-left:clamp(22px,3vw,44px)}
+.proof__fig:last-child{border-right:0}
+.proof__fig-n{
+  font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:clamp(34px,4.6vw,60px);line-height:.95;letter-spacing:-.01em;
+  color:var(--ink);
+}
+.proof__fig-l{
+  font-family:'Inter',sans-serif;font-size:11.5px;font-weight:500;
+  letter-spacing:.11em;text-transform:uppercase;
+  color:rgba(13,22,38,.5);margin-top:16px;line-height:1.6;max-width:24ch;
+}
+
+/* ── THE ROOM (narrow, right) ── */
+.room{padding:var(--pd-y) var(--pd-x)}
+.room__inner{max-width:760px;margin-left:auto}
+.room__h2{
+  font-family:'Libre Caslon Display',serif;font-weight:400;
+  font-size:clamp(30px,3.8vw,52px);line-height:1.06;letter-spacing:-.018em;
+  text-wrap:pretty;margin-bottom:34px;
+}
+.room__lead{
+  font-family:'Libre Caslon Text',serif;font-size:19px;line-height:1.6;
+  color:rgba(13,22,38,.85);margin-bottom:20px;
+}
+.room__body{
+  font-family:'Inter',sans-serif;font-size:16.5px;line-height:1.7;
+  color:rgba(13,22,38,.72);
+}
+.room__body+.room__body{margin-top:18px}
+
+/* ── PHOTO PLATE ── */
+.plate{border-top:1px solid var(--rule-light)}
+.plate img{
+  width:100%;height:clamp(320px,52vw,660px);
+  object-fit:cover;object-position:center 58%;
+}
+
+/* ── WHAT'S INCLUDED ── */
+.included{
+  background:var(--paper-lift);
+  border-top:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light);
+  padding:var(--pd-y) var(--pd-x);
+}
+.included__h2{margin-bottom:0}
+.included__lead{
+  font-family:'Libre Caslon Text',serif;font-size:20px;line-height:1.55;
+  color:rgba(13,22,38,.75);max-width:60ch;margin-top:26px;
+}
+/* cadence header */
+.cadence{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:0 clamp(36px,5vw,72px);
+  border-top:1px solid rgba(13,22,38,.5);border-bottom:1px solid var(--rule-light);
+  margin-top:clamp(44px,5vw,64px);
+}
+.cadence__col{padding:16px 0}
+.cadence__label{
+  display:block;font-family:'Inter',sans-serif;font-weight:700;
+  font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);
+}
+.cadence__sub{
+  display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+  color:rgba(13,22,38,.45);margin-top:6px;
+}
+/* items */
+.inc-items{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:0 clamp(36px,5vw,72px);
+}
+.inc-item{
+  flex:0 1 calc((100% - 3 * clamp(36px,5vw,72px)) / 4);
+  min-width:280px;padding:24px 0;border-bottom:1px solid rgba(13,22,38,.12);
+}
+.inc-item h3{
+  font-family:'Libre Caslon Text',serif;font-weight:700;
+  font-size:19px;line-height:1.25;margin-bottom:8px;
+}
+.inc-item p{
+  font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;
+  color:rgba(13,22,38,.72);
+}
+.inc-stamp{
+  display:block;margin-top:10px;font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--gold-dk);
+}
+.included__close{
+  font-family:'Libre Caslon Text',serif;font-size:20px;line-height:1.5;
+  color:rgba(13,22,38,.85);margin-top:clamp(36px,4vw,52px);
+}
+.included__close span{color:var(--gold-dk)}
+
+/* ── WHO IT'S FOR ── */
+.criteria{padding:var(--pd-y) 0 0}
+.criteria__head{padding:0 var(--pd-x)}
+.criteria__h2{margin-bottom:0}
+.criteria__sub{
+  font-family:'Libre Caslon Text',serif;font-size:20px;line-height:1.55;
+  color:rgba(13,22,38,.75);max-width:56ch;margin:24px 0 clamp(44px,5vw,60px);
+}
+/* ledger rows */
+.ledger{border-top:1px solid var(--ink)}
+.ledger-row{
+  display:grid;
+  grid-template-columns:clamp(48px,5vw,84px) minmax(0,1.05fr) minmax(0,1.5fr);
+  gap:clamp(16px,2.5vw,40px);align-items:start;
+  padding:26px var(--pd-x) 28px;
+}
+.ledger-row+.ledger-row{border-top:1px solid var(--rule-light)}
+.ledger-row__icon{color:var(--gold);display:flex;align-items:flex-start;margin-top:1px}
+.ledger-row__h3{
+  font-family:'Libre Caslon Text',serif;font-weight:700;
+  font-size:clamp(19px,1.9vw,24px);line-height:1.25;
+}
+.ledger-row__p{
+  font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.65;
+  color:rgba(13,22,38,.7);max-width:62ch;
+}
+.criteria__warm{
+  border-top:1px solid var(--rule-light);border-bottom:1px solid var(--ink);
+  padding:22px var(--pd-x);
+}
+.criteria__warm p{
+  font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.65;
+  color:rgba(13,22,38,.68);
+}
+.criteria__warm b{color:var(--gold-dk)}
+
+/* ── HOW YOU JOIN ── */
+.join{padding:var(--pd-y) var(--pd-x)}
+.join__h2{margin-bottom:clamp(48px,6vw,72px)}
+.steps{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:0 clamp(28px,3.5vw,56px);border-top:1px solid var(--ink);
+}
+.step{padding:28px 0 0}
+.step__num-row{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.step__num{
+  font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:34px;line-height:1;
+}
+.step__num--gold{color:var(--gold)}
+.step__num--ink{color:var(--ink)}
+.step__when{
+  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:rgba(13,22,38,.5);
+}
+.step h3{
+  font-family:'Libre Caslon Text',serif;font-weight:700;
+  font-size:20px;line-height:1.25;margin-bottom:10px;
+}
+.step p{
+  font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.65;
+  color:rgba(13,22,38,.7);
+}
+.join__note{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;
+  color:rgba(13,22,38,.55);margin-top:clamp(36px,4vw,52px);
+}
+
+/* ── APPLY ── */
+.apply{
+  background:var(--ink);color:#fff;
+  padding:var(--pd-y) var(--pd-x);
+}
+.apply__grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+  gap:clamp(40px,6vw,88px);align-items:start;
+}
+.apply__tag{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:24px;
+}
+.apply__h2{
+  font-family:'Libre Caslon Display',serif;font-weight:400;
+  font-size:clamp(34px,5vw,68px);line-height:1.02;letter-spacing:-.02em;
+  margin-bottom:26px;color:#fff;
+}
+.apply__lead{
+  font-family:'Libre Caslon Text',serif;font-size:20px;line-height:1.55;
+  color:rgba(255,255,255,.78);margin-bottom:30px;max-width:44ch;
+}
+.apply__note{
+  font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.75;
+  color:rgba(255,255,255,.62);
+  border-top:1px solid var(--rule-dark);padding-top:24px;
+}
+/* form */
+.form{display:grid;gap:16px}
+.form__row{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.field{display:grid;gap:8px}
+.field label{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);
+}
+.field input,.field textarea{
+  width:100%;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.22);border-radius:0;
+  color:#fff;font-family:'Inter',sans-serif;font-size:16px;
+  padding:13px 15px;
+  transition:border-color .16s,background .16s;
+}
+.field input:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);background:rgba(255,255,255,.08);
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.35)}
+.form__small{
+  font-family:'Inter',sans-serif;font-size:12.5px;
+  color:rgba(255,255,255,.45);line-height:1.7;margin-top:6px;
+}
+
+/* ── FOOTER ── */
+.foot{
+  background:var(--ink);color:rgba(255,255,255,.5);
+  border-top:1px solid var(--rule-dark);padding:36px var(--pd-x);
+  display:flex;flex-wrap:wrap;gap:20px;
+  justify-content:space-between;align-items:center;
+  font-family:'Inter',sans-serif;font-size:12.5px;
+}
+.foot a{color:rgba(255,255,255,.72)}
+.foot a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="v2">
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="nav__mark" href="#top">
+    Auction Buyers <span>Club</span>
+    <small class="nav__by">by Hammered</small>
+  </a>
+  <div class="nav__links">
+    <a href="#calls" data-navlink>The calls</a>
+    <a href="#proof" data-navlink>Members</a>
+    <a href="#included" data-navlink>What's included</a>
+    <a href="#criteria" data-navlink>Who it's for</a>
+    <a class="nav__apply btn" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply &rarr;</a>
+  </div>
+</nav>
+
+<!-- ============ LOT TAPE ============ -->
+<div class="tape" aria-label="Recent lots reviewed on the calls" id="top">
+  <div class="tape__flag">On the call</div>
+  <div class="tape__track">
+    <div class="tape__row">
+      <div class="lot">Flat, Dover &middot; guide £47,000 &nbsp;<span class="lot__yes">Worth £120,000</span></div>
+      <div class="lot">Office block, Newport &middot; guide £500,000 &nbsp;<span class="lot__no">Walk &middot; lease expiring 2028</span></div>
+      <div class="lot">Block of flats, Luton &middot; guide £2.0m &nbsp;<span class="lot__yes">Bid to £1.7m</span></div>
+      <div class="lot">Terrace, Birmingham &middot; guide £180,000 &nbsp;<span class="lot__no">Overpriced &middot; bid £130,000</span></div>
+      <div class="lot">Block of 3 flats, Nottingham &middot; guide £220,000 &nbsp;<span class="lot__yes">Worth £300,000</span></div>
+      <div class="lot">House, Derby &middot; guide £125,000 &nbsp;<span class="lot__no">Walk &middot; cracks in the walls</span></div>
+      <div class="lot">Mixed use, Ross-on-Wye &middot; guide £500,000 &nbsp;<span class="lot__yes">Bid to £600,000</span></div>
+      <div class="lot">Farmhouse, Sturminster Newton &middot; guide £250,000 &nbsp;<span class="lot__yes">Bid to £150,000</span></div>
+    </div>
+    <div class="tape__row tape__track-dup" aria-hidden="true">
+      <div class="lot">Flat, Dover &middot; guide £47,000 &nbsp;<span class="lot__yes">Worth £120,000</span></div>
+      <div class="lot">Office block, Newport &middot; guide £500,000 &nbsp;<span class="lot__no">Walk &middot; lease expiring 2028</span></div>
+      <div class="lot">Block of flats, Luton &middot; guide £2.0m &nbsp;<span class="lot__yes">Bid to £1.7m</span></div>
+      <div class="lot">Terrace, Birmingham &middot; guide £180,000 &nbsp;<span class="lot__no">Overpriced &middot; bid £130,000</span></div>
+      <div class="lot">Block of 3 flats, Nottingham &middot; guide £220,000 &nbsp;<span class="lot__yes">Worth £300,000</span></div>
+      <div class="lot">House, Derby &middot; guide £125,000 &nbsp;<span class="lot__no">Walk &middot; cracks in the walls</span></div>
+      <div class="lot">Mixed use, Ross-on-Wye &middot; guide £500,000 &nbsp;<span class="lot__yes">Bid to £600,000</span></div>
+      <div class="lot">Farmhouse, Sturminster Newton &middot; guide £250,000 &nbsp;<span class="lot__yes">Bid to £150,000</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <h1>£18m bought. £15m sold. <span class="gold">24 members.</span></h1>
+  <div class="hero__body">
+    <p class="hero__lead">A room of investors who buy at auction for a living, and a place you can bring any lot to, twice a week, before you bid on it.</p>
+    <div class="hero__cta">
+      <a class="btn btn--gold" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply for membership &rarr;</a>
+      <span class="hero__places">Places available, by interview only</span>
+    </div>
+  </div>
+  <div class="hero__credits">
+    <span>Led by <a href="https://www.linkedin.com/in/theauctioninsider/">Jay Howard</a> and <a href="https://www.linkedin.com/in/theauctionpro/">Piotr Rusinek</a> &middot; Authors of <em>Before The Hammer Falls</em></span>
+    <span>Established 2020 &middot; Capped at 24 members</span>
+  </div>
+  <div class="hero__stats">
+    <div class="hero__stat">
+      <div class="hero__stat-n hero__stat-n--gold">1,000+</div>
+      <div class="hero__stat-l">Auction lots reviewed<br>by the room each year</div>
+    </div>
+    <div class="hero__stat">
+      <div class="hero__stat-n hero__stat-n--white">100+</div>
+      <div class="hero__stat-l">Lots reviewed<br>every month</div>
+    </div>
+    <div class="hero__stat">
+      <div class="hero__stat-n hero__stat-n--white">88&times;</div>
+      <div class="hero__stat-l">Deal review calls<br>held every year</div>
+    </div>
+    <div class="hero__stat">
+      <div class="hero__stat-n hero__stat-n--white">24</div>
+      <div class="hero__stat-l">Members. No more,<br>by design</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ VIDEO ============ -->
+<div class="video">
+  <div class="video__intro">
+    <div class="video__label">The members, in their own words</div>
+    <p class="video__hed">You'll get a better sense of this from the people in the room than from anything we write.</p>
+  </div>
+</div>
+<div class="video__frame">
+  <iframe src="https://player.vimeo.com/video/1148061136?h=c19851af4f&title=0" title="Auction Buyers Club" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+
+<!-- ============ THE CALLS ============ -->
+<section class="calls" id="calls">
+  <div class="section-label section-label--gold">Tuesday and Thursday, 8:45am</div>
+  <h2 class="h2-display h2-display--28 calls__h2">We review over 1,000 auction lots a year. <span class="h2-dk">Most buyers manage five.</span></h2>
+
+  <div class="exchange">
+    <div class="exchange__col">
+      <div class="exchange__col-label">You bring a lot</div>
+      <div class="exchange__item">Something you found in this cycle's catalogue</div>
+      <div class="exchange__item">A deal you can't make your mind up about</div>
+      <div class="exchange__item">One you're already committed to and want checked</div>
+      <div class="exchange__item">Or nothing at all, and you still get fourteen others</div>
+    </div>
+    <div class="exchange__axis">
+      <div class="exchange__axis-line"></div>
+      <div class="exchange__axis-arrow">&rarr;</div>
+    </div>
+    <div class="exchange__col exchange__col--right">
+      <div class="exchange__col-label">We tell you straight</div>
+      <div class="exchange__item">Whether it's a good deal, or whether you walk away</div>
+      <div class="exchange__item">What it's actually worth, not what the guide suggests</div>
+      <div class="exchange__item">What it's going to need, and what that will cost</div>
+      <div class="exchange__item">What to bid, and how to structure the offer</div>
+    </div>
+  </div>
+
+  <div class="calls__body">
+    <div>
+      <p>Then we work through a dozen or more lots, priced and pulled apart by people buying this month, not someday.</p>
+      <p>Alone, you might weigh five lots a year. In the room, you sit through a thousand, and hear exactly what happened when someone bought.</p>
+    </div>
+    <div>
+      <p>You're not here to learn auctions. You're here to borrow experience you can't buy anywhere else.</p>
+      <p>The unmortgageable flat. The short lease. The £40,000 in hidden works. Spotted in ninety seconds — not cleverness, scar tissue.</p>
+    </div>
+  </div>
+
+  <div class="pull">
+    <p>We give you the reps <span class="pull-dk">without the losses.</span></p>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="proof" id="proof">
+  <div class="section-label section-label--ink">What the room actually does</div>
+  <h2 class="h2-display h2-display--26 proof__h2">Twenty-four people. Thirty-three million pounds of property.</h2>
+
+  <div class="proof__lead">
+    <div class="proof__lead-who">Todd Warwick &middot; The one that didn't happen</div>
+    <h3 class="proof__lead-h3">Ready to commit to a development deal. The room found the numbers that said don't.</h3>
+    <div class="proof__lead-grid">
+      <p>Todd brought what looked like a promising development opportunity to a Thursday call. The room worked through the resale assumptions, the site constraints and the overall margin — until it was clear the risk outweighed the reward. Instead of spending months and tens of thousands trying to rescue it, Todd walked away.</p>
+      <q>One conversation saved me from making a decision I would probably have regretted. That alone made the membership worthwhile.</q>
+    </div>
+  </div>
+
+  <div class="proof__cards">
+    <article class="proof__card">
+      <div class="proof__card-who">Matthew Dorey</div>
+      <h3 class="proof__card-h3">Bought pre-auction with confidence.</h3>
+      <p>Matthew brought the opportunity to the room, refined his bidding strategy, and secured a block of three flats for £225,000. Little work needed — expected to refinance between £275,000 and £300,000, creating immediate equity.</p>
+      <q>Having experienced investors challenge your thinking gives you the confidence to move quickly when the right opportunity comes along.</q>
+    </article>
+    <article class="proof__card">
+      <div class="proof__card-who">Susan McKillop</div>
+      <h3 class="proof__card-h3">Negotiated a better deal.</h3>
+      <p>Susan secured a property in West Hampstead for £22,000 less than an inferior property in a poorer location had achieved only a few months earlier. Minimal refurbishment needed, with loft potential for the future.</p>
+      <q>The weekly reviews help you focus on buying the right property, not simply the cheapest one.</q>
+    </article>
+  </div>
+
+  <div class="proof__figures">
+    <div class="proof__fig">
+      <div class="proof__fig-n">£18m</div>
+      <div class="proof__fig-l">Purchased by members in the last 12 months</div>
+    </div>
+    <div class="proof__fig">
+      <div class="proof__fig-n">£15m</div>
+      <div class="proof__fig-l">Sold by members over the same period</div>
+    </div>
+    <div class="proof__fig">
+      <div class="proof__fig-n">~£750k</div>
+      <div class="proof__fig-l">Average purchases per member, per year</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE ROOM ============ -->
+<section class="room">
+  <div class="room__inner">
+    <div class="section-label section-label--gold">The room</div>
+    <h2 class="room__h2">Twenty-four people, and we interview every one of them.</h2>
+    <p class="room__lead">Members come from banking, medicine, professional sport, the trades and full-time property. Some have been buying at auction for twenty years. Some bought their first lot after joining.</p>
+    <p class="room__body">What they have in common is that they are all actually transacting. Nobody is watching from the sidelines, nobody is here to sell you anything, and nobody guards their deals. Members openly discuss properties they're interested in, because the room is worth more to them than any single lot.</p>
+    <p class="room__body room__body">Trust is the currency here. It only works because we're careful about who comes in, and because the moment the room gets bigger than twenty-four, your lot stops getting looked at properly. That is the entire product, so the cap doesn't move.</p>
+  </div>
+</section>
+
+<!-- ============ PHOTO PLATE ============ -->
+<div class="plate">
+  <img src="the-room.png" alt="Auction Buyers Club members at a quarterly boardroom day" loading="lazy">
+</div>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
+<section class="included" id="included">
+  <div class="section-label section-label--ink">Membership</div>
+  <h2 class="h2-display h2-display--26 included__h2">What you get, <span style="color:var(--gold-dk)">and how often you get it.</span></h2>
+  <p class="included__lead">Membership isn't a library of things you might use one day. Most of it lands on a schedule — here it is by how often it reaches you.</p>
+
+  <div class="cadence">
+    <div class="cadence__col"><span class="cadence__label">Twice a week</span><span class="cadence__sub">Tue + Thu, 8:45am</span></div>
+    <div class="cadence__col"><span class="cadence__label">Every day</span><span class="cadence__sub">Always open</span></div>
+    <div class="cadence__col"><span class="cadence__label">Every quarter</span><span class="cadence__sub">In person, London</span></div>
+    <div class="cadence__col"><span class="cadence__label">On demand</span><span class="cadence__sub">The moment you need it</span></div>
+  </div>
+
+  <div class="inc-items">
+    <div class="inc-item">
+      <h3>Deal review calls</h3>
+      <p>Bring your lots, get a straight answer, hear everyone else's. Ten to fifteen worked through, one at a time.</p>
+      <span class="inc-stamp">Twice a week &middot; over 1,000 lots a year</span>
+    </div>
+    <div class="inc-item">
+      <h3>Direct access to Jay &amp; Piotr</h3>
+      <p>The full members' WhatsApp group, plus a private group with just the two of us for anything you'd rather not put in the room.</p>
+      <span class="inc-stamp">Every day</span>
+    </div>
+    <div class="inc-item">
+      <h3>The room itself</h3>
+      <p>Twenty-three other active buyers, each bringing their own live deals, specialisms and years in the market.</p>
+      <span class="inc-stamp">Every day</span>
+    </div>
+    <div class="inc-item">
+      <h3>Boardroom day</h3>
+      <p>A full day in person in Central London with invited guests. Troubleshooting, industry insight, and the conversations that don't happen on Zoom.</p>
+      <span class="inc-stamp">Every quarter &middot; &pound;100 + VAT supplement per meeting, at cost</span>
+    </div>
+    <div class="inc-item">
+      <h3>Roma Finance hunter's facility</h3>
+      <p>Available to club members only, subject to underwriting — through a broker who buys and sells at auction himself.</p>
+      <span class="inc-stamp">On demand &middot; exclusive to ABC</span>
+    </div>
+    <div class="inc-item">
+      <h3>The tools</h3>
+      <p>On-demand recording of our two-day auction workshop, maximum bid calculator, stamp duty formula, and the rest of what we use ourselves.</p>
+      <span class="inc-stamp">On demand &middot; plus 25% longer EIG subscription</span>
+    </div>
+    <div class="inc-item">
+      <h3>Our professional network</h3>
+      <p>Solicitors, architects, planning consultants, surveyors, accountants. People we use, not a directory we compiled.</p>
+      <span class="inc-stamp">On demand &middot; plus member rates on live events and the annual retreat</span>
+    </div>
+  </div>
+
+  <p class="included__close">Every one of these exists for the same reason: <span>so the next lot you bid on is the right one.</span></p>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="criteria" id="criteria">
+  <div class="criteria__head">
+    <div class="section-label section-label--gold">Who it's for</div>
+    <h2 class="h2-display h2-display--26 criteria__h2">We say no to people. <span style="color:var(--gold-dk)">That's what keeps it worth joining.</span></h2>
+    <p class="criteria__sub">Twenty-four seats. Every one of them held by someone who can act on what the room tells them. Here's the honest bar:</p>
+  </div>
+
+  <div class="ledger">
+    <div class="ledger-row">
+      <div class="ledger-row__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="1"/><circle cx="12" cy="12" r="2.6"/><path d="M5.5 9.5v5M18.5 9.5v5"/></svg>
+      </div>
+      <h3 class="ledger-row__h3">£100,000+ ready to deploy</h3>
+      <p class="ledger-row__p">Cash for your own deals, or an unencumbered or low-geared portfolio. Not because we're precious — because the learning only lands when you can act on it.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-row__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.4V12l3.4 2.1"/></svg>
+      </div>
+      <h3 class="ledger-row__h3">Buying now, not &ldquo;one day&rdquo;</h3>
+      <p class="ledger-row__p">Not next year, and not once you've read a bit more. The room moves at the pace of real auctions.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-row__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="M15.4 15.4l4.1 4.1"/><path d="M8.2 9.6h5.2M8.2 12.4h3.4"/></svg>
+      </div>
+      <h3 class="ledger-row__h3">You do your homework</h3>
+      <p class="ledger-row__p">Go through the catalogues. Turn up. Research your own lots. We'll give you an honest read on any property — we won't do it for you.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-row__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5h13.5l-3-3M20.5 15.5H7l3 3"/></svg>
+      </div>
+      <h3 class="ledger-row__h3">You put your experience in</h3>
+      <p class="ledger-row__p">Everyone in the room benefits from everyone else's scars. Yours count too.</p>
+    </div>
+  </div>
+  <div class="criteria__warm">
+    <p><b>Not quite there yet?</b> Apply anyway and say so. We'll tell you honestly and point you at what to do first. Timing matters more than ambition in this game — and there's no shame in being early.</p>
+  </div>
+</section>
+
+<!-- ============ HOW YOU JOIN ============ -->
+<section class="join">
+  <div class="section-label section-label--gold">The process</div>
+  <h2 class="h2-display join__h2">How you join.</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step__num-row">
+        <span class="step__num step__num--gold">01</span>
+        <span class="step__when">Ten minutes</span>
+      </div>
+      <h3>Apply</h3>
+      <p>Tells us who you are, what you're buying, and where you're up to.</p>
+    </div>
+    <div class="step">
+      <div class="step__num-row">
+        <span class="step__num step__num--gold">02</span>
+        <span class="step__when">20&ndash;30 minutes</span>
+      </div>
+      <h3>A call with Jay or Piotr</h3>
+      <p>It goes both ways — we're working out whether the club is right for you and you're doing exactly the same. We'll talk you through the fee here.</p>
+    </div>
+    <div class="step">
+      <div class="step__num-row">
+        <span class="step__num step__num--gold">03</span>
+        <span class="step__when">Same week</span>
+      </div>
+      <h3>Terms &amp; first invoice</h3>
+      <p>Six-month minimum, billed six-monthly in advance, one month's notice on renewals.</p>
+    </div>
+    <div class="step">
+      <div class="step__num-row">
+        <span class="step__num step__num--ink">04</span>
+        <span class="step__when">Same day</span>
+      </div>
+      <h3>You're in</h3>
+      <p>Added to the WhatsApp group. First call the following Tuesday or Thursday. Bring a lot.</p>
+    </div>
+  </div>
+  <p class="join__note">Apply to first call: typically under two weeks.</p>
+</section>
+
+<!-- ============ APPLY ============ -->
+<section class="apply" id="apply">
+  <div class="apply__grid">
+    <div>
+      <div class="apply__tag">Places available, by interview only</div>
+      <h2 class="apply__h2">Apply for a place.</h2>
+      <p class="apply__lead">Membership is capped at twenty-four and every application goes through an interview. If it isn't right for you we'll say so.</p>
+      <p class="apply__note">We don't publish the fee. Not to be coy, but because a number on its own tells you nothing about whether this is worth it. We'd rather show you what happens in the room first, then talk about money on the call.</p>
+    </div>
+    <div class="form">
+      <div class="form__row">
+        <div class="field"><label for="fn">First name</label><input type="text" id="fn" name="first_name" autocomplete="given-name"></div>
+        <div class="field"><label for="ln">Last name</label><input type="text" id="ln" name="last_name" autocomplete="family-name"></div>
+      </div>
+      <div class="field"><label for="em">Email</label><input type="email" id="em" name="email" autocomplete="email"></div>
+      <div class="field"><label for="qs">Where are you buying, and how many lots a year?</label><textarea id="qs" name="question" rows="4"></textarea></div>
+      <a class="btn btn--gold" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener" style="justify-self:start;margin-top:8px">Submit application &rarr;</a>
+      <p class="form__small">We'll come back to you within two working days. Everything you tell us stays between you, Jay and Piotr.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <span>Auction Buyers Club &middot; Created by HAMMERED &middot; Established 2020</span>
+  <span><a href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply for membership</a></span>
+</footer>
+
+</div>
+</body>
+</html>
