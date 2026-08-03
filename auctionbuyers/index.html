@@ -189,9 +189,10 @@ a{color:inherit}
 .abc-split__col--dark .abc-split__t{color:var(--gold-bright)}
 .abc-split__col--dark .abc-list li{font-weight:600}
 .abc-list{list-style:none;margin:0;padding:0}
-.abc-list li{padding:13px 0;position:relative;border-top:1px solid var(--line-light);font-size:16.5px;line-height:1.55}
+.abc-list li{padding:13px 0 13px 22px;position:relative;border-top:1px solid var(--line-light);font-size:16.5px;line-height:1.55}
 .abc-split__col .abc-list li{border-top-color:var(--line-dark)}
 .abc-list li:first-child{border-top:0}
+.abc-list li::before{content:"";position:absolute;left:0;top:22px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
 .abc-body-copy p{max-width:84ch;font-size:17.5px;line-height:1.65}
 .abc-body-copy--cols{columns:2;column-gap:clamp(36px,4vw,64px)}
 .abc-body-copy--cols p{max-width:none;margin-top:0;break-inside:avoid}
