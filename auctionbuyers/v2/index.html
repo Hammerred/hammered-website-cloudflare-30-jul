@@ -52,7 +52,6 @@ a:hover{color:var(--gold)}
   background:var(--ink);
   display:flex;align-items:center;justify-content:space-between;
   padding:20px var(--pd-x);
-  position:sticky;top:0;z-index:60;
 }
 .nav__mark{
   font-family:'Libre Caslon Text',serif;font-weight:700;font-size:18px;
@@ -226,14 +225,16 @@ a:hover{color:var(--gold)}
   font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
   border-top:1px solid var(--ink);padding-top:14px;margin-bottom:6px;
+  text-align:right;
 }
-.exchange__col--right .exchange__col-label{text-align:right}
+.exchange__col--right .exchange__col-label{text-align:left}
 .exchange__item{
   font-family:'Libre Caslon Text',serif;
   font-size:clamp(16px,1.6vw,19px);line-height:1.4;
   padding:16px 0;border-bottom:1px solid var(--rule-light);
+  text-align:right;
 }
-.exchange__col--right .exchange__item{text-align:right}
+.exchange__col--right .exchange__item{text-align:left}
 .exchange__axis{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   width:clamp(40px,5vw,72px);position:relative;
@@ -249,8 +250,8 @@ a:hover{color:var(--gold)}
 @media(max-width:860px){
   .exchange{grid-template-columns:1fr}
   .exchange__axis{display:none}
-  .exchange__col--right .exchange__col-label{text-align:left}
-  .exchange__col--right .exchange__item{text-align:left}
+  .exchange__col .exchange__col-label{text-align:left}
+  .exchange__col .exchange__item{text-align:left}
   .exchange__col--right{margin-top:28px}
 }
 /* body copy + pull */
@@ -328,6 +329,7 @@ q{
   border-left:2px solid var(--gold);padding-left:20px;
   margin:0;quotes:none;
 }
+.proof__lead-grid q{font-size:19px;padding-left:22px}
 /* figures */
 .proof__figures{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
