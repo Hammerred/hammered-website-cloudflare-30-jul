@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auction Buyers Club | Before you bid, twenty-three other buyers have already looked at it.</title>
-<meta name="description" content="A capped community of 24 UK investors who buy at auction. Members bought £18m of property last year — every lot came to the room first. Twice-weekly deal reviews. Established 2020.">
+<title>Auction Buyers Club | 24 members. £18m bought, £15m sold.</title>
+<meta name="description" content="A capped community of 24 UK investors who buy at auction. Members bought £18m and sold £15m of property last year. Twice-weekly deal reviews, over 1,000 lots assessed a year. Established 2020.">
 <meta property="og:title" content="Auction Buyers Club">
-<meta property="og:description" content="Before you bid, twenty-three other buyers have already looked at it. Twenty-four investors who buy at auction for a living. Bring any lot to the room, twice a week.">
+<meta property="og:description" content="24 members. £18m bought and £15m sold at auction in the last twelve months. Bring any lot to the room before you bid on it.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://auctionbuyers.club/">
+<meta property="og:url" content="https://auctionbuyers.club/v2/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -116,8 +116,8 @@ a:hover{color:var(--gold)}
 }
 .hero h1{
   font-family:'Libre Caslon Display',serif;font-weight:400;
-  font-size:clamp(38px,7vw,104px);line-height:.97;
-  letter-spacing:-.026em;max-width:24ch;text-wrap:pretty;
+  font-size:clamp(46px,8.4vw,124px);line-height:.95;
+  letter-spacing:-.026em;max-width:20ch;text-wrap:pretty;
 }
 .hero h1 .gold{color:var(--gold)}
 .hero__body{
@@ -145,6 +145,10 @@ a:hover{color:var(--gold)}
   background:transparent;
 }
 .btn--outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero__places{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+}
 .hero__credits{
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;
   border-top:1px solid var(--rule-dark);padding:24px 0 30px;
@@ -209,12 +213,7 @@ a:hover{color:var(--gold)}
 .h2-display--26{max-width:26ch}
 .h2-display--28{max-width:28ch}
 .h2-dk{color:var(--gold-dk)}
-.calls__h2{margin-bottom:clamp(28px,4vw,44px)}
-.calls__note{
-  font-family:'Inter',sans-serif;font-size:16px;line-height:1.68;
-  color:rgba(13,22,38,.72);max-width:72ch;
-  margin-bottom:clamp(40px,5vw,64px);
-}
+.calls__h2{margin-bottom:clamp(48px,6vw,80px)}
 /* exchange diagram */
 .exchange{
   display:grid;
@@ -349,13 +348,6 @@ q{
   margin:0;quotes:none;
 }
 .proof__lead-grid q{font-size:19px;padding-left:22px}
-/* room caveat */
-.proof__caveat{
-  max-width:72ch;margin-top:clamp(40px,5vw,64px);
-  font-family:'Inter',sans-serif;font-size:16px;line-height:1.72;
-  color:rgba(13,22,38,.65);
-  border-top:1px solid var(--rule-light);padding-top:clamp(28px,3.5vw,40px);
-}
 /* figures */
 .proof__figures{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -376,11 +368,6 @@ q{
   letter-spacing:.11em;text-transform:uppercase;
   color:rgba(13,22,38,.5);margin-top:16px;line-height:1.6;max-width:24ch;
 }
-.proof__fig-note{
-  font-family:'Inter',sans-serif;font-size:11px;
-  color:rgba(13,22,38,.4);margin-top:clamp(14px,2vw,20px);letter-spacing:.04em;
-  grid-column:1/-1;
-}
 
 /* ── THE ROOM (narrow, right) ── */
 .room{padding:var(--pd-y) var(--pd-x)}
@@ -399,23 +386,6 @@ q{
   color:rgba(13,22,38,.72);
 }
 .room__body+.room__body{margin-top:18px}
-
-/* ── TRUST ── */
-.trust{
-  background:var(--ink);color:#fff;
-  padding:var(--pd-y) var(--pd-x);
-}
-.trust__inner{max-width:760px;margin-left:auto}
-.trust__h2{
-  font-family:'Libre Caslon Display',serif;font-weight:400;
-  font-size:clamp(28px,3.4vw,46px);line-height:1.08;letter-spacing:-.016em;
-  text-wrap:pretty;margin-bottom:32px;color:#fff;
-}
-.trust__body{
-  font-family:'Inter',sans-serif;font-size:16.5px;line-height:1.72;
-  color:rgba(255,255,255,.68);
-}
-.trust__body+.trust__body{margin-top:18px}
 
 /* ── PHOTO PLATE ── */
 .plate{border-top:1px solid var(--rule-light)}
@@ -556,6 +526,11 @@ q{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
   gap:clamp(40px,6vw,88px);align-items:start;
 }
+.apply__tag{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:24px;
+}
 .apply__h2{
   font-family:'Libre Caslon Display',serif;font-weight:400;
   font-size:clamp(34px,5vw,68px);line-height:1.02;letter-spacing:-.02em;
@@ -620,7 +595,7 @@ q{
     <a href="#proof" data-navlink>Members</a>
     <a href="#included" data-navlink>What's included</a>
     <a href="#criteria" data-navlink>Who it's for</a>
-    <a class="nav__apply btn" href="https://form.getformly.com/f/aOt5IQ?src=nav" target="_blank" rel="noopener">Apply &rarr;</a>
+    <a class="nav__apply btn" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply &rarr;</a>
   </div>
 </nav>
 
@@ -653,29 +628,30 @@ q{
 
 <!-- ============ HERO ============ -->
 <header class="hero">
-  <h1>Before you bid, twenty-three other buyers have already looked at it.</h1>
+  <h1>£18m bought. £15m sold. <span class="gold">24 members.</span></h1>
   <div class="hero__body">
-    <p class="hero__lead">Twenty-four investors who buy at auction for a living. Bring any lot to the room, twice a week, before you commit to it.</p>
+    <p class="hero__lead">A room of investors who buy at auction for a living, and a place you can bring any lot to, twice a week, before you bid on it.</p>
     <div class="hero__cta">
-      <a class="btn btn--gold" href="https://form.getformly.com/f/aOt5IQ?src=hero" target="_blank" rel="noopener">Apply for membership &rarr;</a>
+      <a class="btn btn--gold" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply for membership &rarr;</a>
+      <span class="hero__places">Places available, by interview only</span>
     </div>
   </div>
   <div class="hero__credits">
-    <span>Led by <a href="https://www.linkedin.com/in/theauctioninsider/">Jay Howard</a> and <a href="https://www.linkedin.com/in/theauctionpro/">Piotr Rusinek</a>. Eight years of Hammered Auctions. Authors of <em>Before The Hammer Falls</em>.</span>
+    <span>Led by <a href="https://www.linkedin.com/in/theauctioninsider/">Jay Howard</a> and <a href="https://www.linkedin.com/in/theauctionpro/">Piotr Rusinek</a> &middot; Authors of <em>Before The Hammer Falls</em></span>
     <span>Established 2020 &middot; Capped at 24 members</span>
   </div>
   <div class="hero__stats">
     <div class="hero__stat">
-      <div class="hero__stat-n hero__stat-n--gold">1,000</div>
-      <div class="hero__stat-l">Live lots worked through<br>by the room each year</div>
+      <div class="hero__stat-n hero__stat-n--gold">1,000+</div>
+      <div class="hero__stat-l">Auction lots reviewed<br>by the room each year</div>
     </div>
     <div class="hero__stat">
-      <div class="hero__stat-n hero__stat-n--white">Recorded</div>
-      <div class="hero__stat-l">Every call so a missed week<br>isn't a lost month</div>
+      <div class="hero__stat-n hero__stat-n--white">100+</div>
+      <div class="hero__stat-l">Lots reviewed<br>every month</div>
     </div>
     <div class="hero__stat">
-      <div class="hero__stat-n hero__stat-n--white">Tue + Thu</div>
-      <div class="hero__stat-l">8:45am<br>every week</div>
+      <div class="hero__stat-n hero__stat-n--white">88&times;</div>
+      <div class="hero__stat-l">Deal review calls<br>held every year</div>
     </div>
     <div class="hero__stat">
       <div class="hero__stat-n hero__stat-n--white">24</div>
@@ -688,7 +664,7 @@ q{
 <div class="video">
   <div class="video__intro">
     <div class="video__label">The members, in their own words</div>
-    <p class="video__hed">You'll get a better sense of this from the people in the room than from anything we write. Four members six minutes.</p>
+    <p class="video__hed">You'll get a better sense of this from the people in the room than from anything we write.</p>
   </div>
 </div>
 <div class="video__frame">
@@ -698,9 +674,7 @@ q{
 <!-- ============ THE CALLS ============ -->
 <section class="calls" id="calls">
   <div class="section-label section-label--gold">Tuesday and Thursday, 8:45am</div>
-  <h2 class="h2-display h2-display--28 calls__h2">Ten to fifteen live lots a call, <span class="h2-dk">priced and pulled apart by people buying this month.</span></h2>
-
-  <p class="calls__note">Two calls a week. Every week. Not a webinar and not a lecture — a room of active buyers going through real properties that real people are about to bid on. Recorded so you can catch what you miss.</p>
+  <h2 class="h2-display h2-display--28 calls__h2">We review over 1,000 auction lots a year. <span class="h2-dk">Most buyers manage five.</span></h2>
 
   <div class="exchange">
     <div class="exchange__col">
@@ -719,14 +693,14 @@ q{
       <div class="exchange__item">Whether it's a good deal, or whether you walk away</div>
       <div class="exchange__item">What it's actually worth, not what the guide suggests</div>
       <div class="exchange__item">What it's going to need, and what that will cost</div>
-      <div class="exchange__item">Where we'd cap the bid, and how we'd structure the offer</div>
+      <div class="exchange__item">What to bid, and how to structure the offer</div>
     </div>
   </div>
 
   <div class="calls__body">
     <div>
       <p>Then we work through a dozen or more lots, priced and pulled apart by people buying this month, not someday.</p>
-      <p>Working alone you see your own deals. In the room you see a hundred a month, and you hear what happened when someone actually bought — what it surveyed at, what it cost to fix, what it let for.</p>
+      <p>Alone, you might weigh five lots a year. In the room, you sit through a thousand, and hear exactly what happened when someone bought.</p>
     </div>
     <div>
       <p>You're not here to learn auctions. You're here to borrow experience you can't buy anywhere else.</p>
@@ -751,14 +725,14 @@ q{
 
 <!-- ============ PROOF ============ -->
 <section class="proof" id="proof">
-  <div class="section-label section-label--ink">What members have been doing</div>
-  <h2 class="h2-display h2-display--26 proof__h2">£18m of auction property last year. Every lot came to the room first.</h2>
+  <div class="section-label section-label--ink">What the room actually does</div>
+  <h2 class="h2-display h2-display--26 proof__h2">Twenty-four people. Thirty-three million pounds of property.</h2>
 
   <div class="proof__lead">
     <div class="proof__lead-who">Todd Warwick &middot; The one that didn't happen</div>
-    <h3 class="proof__lead-h3">Todd Warwick was ready to commit to a development deal. The room found the numbers that said don't.</h3>
+    <h3 class="proof__lead-h3">Ready to commit to a development deal. The room found the numbers that said don't.</h3>
     <div class="proof__lead-grid">
-      <p>Todd brought what looked like a promising development opportunity to a Thursday call. The room worked through the resale assumptions, the site constraints and the margin. The conclusion was not that the deal was impossible; it was that the downside was too thinly priced for him to take it on. He walked away.</p>
+      <p>Todd brought what looked like a promising development opportunity to a Thursday call. The room worked through the resale assumptions, the site constraints and the overall margin — until it was clear the risk outweighed the reward. Instead of spending months and tens of thousands trying to rescue it, Todd walked away.</p>
       <q>One conversation saved me from making a decision I would probably have regretted. That alone made the membership worthwhile.</q>
     </div>
   </div>
@@ -766,32 +740,31 @@ q{
   <div class="proof__cards">
     <article class="proof__card">
       <div class="proof__card-who">Matthew Dorey</div>
-      <h3 class="proof__card-h3">Bought pre-auction with a clearer plan.</h3>
-      <p>Matthew brought the opportunity to the room, refined his bidding strategy, and secured a block of three flats for £225,000. Little work needed — he expected a refinance in the £275,000&ndash;£300,000 range after limited works.</p>
+      <h3 class="proof__card-h3">Bought pre-auction with confidence.</h3>
+      <p>Matthew brought the opportunity to the room, refined his bidding strategy, and secured a block of three flats for £225,000. Little work needed — expected to refinance between £275,000 and £300,000, creating immediate equity.</p>
       <q>Having experienced investors challenge your thinking gives you the confidence to move quickly when the right opportunity comes along.</q>
     </article>
     <article class="proof__card">
       <div class="proof__card-who">Susan McKillop</div>
-      <h3 class="proof__card-h3">Paid less for the better property.</h3>
-      <p>Susan secured a property in West Hampstead for £22,000 less than an inferior flat in a poorer location had achieved a few months earlier. Minimal refurbishment, with loft potential for later.</p>
+      <h3 class="proof__card-h3">Negotiated a better deal.</h3>
+      <p>Susan secured a property in West Hampstead for £22,000 less than an inferior property in a poorer location had achieved only a few months earlier. Minimal refurbishment needed, with loft potential for the future.</p>
       <q>The weekly reviews help you focus on buying the right property, not simply the cheapest one.</q>
     </article>
-  </div>
-
-  <div class="proof__caveat">
-    <p>The room is not always right. Twenty-four opinions don't remove judgement from property. Members disagree. Sometimes the room is too cautious and sometimes it misses something. The point isn't to outsource the decision — it's to make it with better questions on the table.</p>
   </div>
 
   <div class="proof__figures">
     <div class="proof__fig">
       <div class="proof__fig-n">£18m</div>
-      <div class="proof__fig-l">Bought by members in the 12 months to June 2026</div>
+      <div class="proof__fig-l">Purchased by members in the last 12 months</div>
     </div>
     <div class="proof__fig">
       <div class="proof__fig-n">£15m</div>
-      <div class="proof__fig-l">Sold over the same period</div>
+      <div class="proof__fig-l">Sold by members over the same period</div>
     </div>
-    <p class="proof__fig-note">Self-reported by members &mdash; completions only</p>
+    <div class="proof__fig">
+      <div class="proof__fig-n">~£750k</div>
+      <div class="proof__fig-l">Average purchases per member, per year</div>
+    </div>
   </div>
 </section>
 
@@ -799,20 +772,10 @@ q{
 <section class="room">
   <div class="room__inner">
     <div class="section-label section-label--gold">The room</div>
-    <h2 class="room__h2">Twenty-four active buyers, and we interview every one of them.</h2>
-    <p class="room__lead">Members are buying anywhere from six to twenty lots a year &mdash; HMOs, commercial conversions, title problems, land. Some have been at auction twenty years. Some bought their first lot after joining. All of them are transacting now.</p>
-    <p class="room__body">Nobody is watching from the sidelines and nobody guards their deals. Members put up lots they're actively chasing, which sounds mad until you've seen it: the room is worth more to everyone than any single property, and in three years nobody has bid against a member on a lot they brought.</p>
-    <p class="room__body">Trust is the currency. It only works because we're careful about who comes in, and because the moment the room gets past twenty-four your lot stops getting looked at properly. That's the entire product, so the cap doesn't move.</p>
-    <p class="room__body">The boardroom meets in Central London. The buying doesn't. Members buy across England, Scotland, Wales and Northern Ireland.</p>
-  </div>
-</section>
-
-<!-- ============ TRUST ============ -->
-<section class="trust">
-  <div class="trust__inner">
-    <h2 class="trust__h2">Two things worth saying plainly.</h2>
-    <p class="trust__body">We're an auction house. Hammered sells property and this club helps people buy it &mdash; including, sometimes, from us. So the rule is simple: on Hammered lots you get the same read you'd get from anyone else in the room, and if we can't be useful on one we say so and stay out of it.</p>
-    <p class="trust__body">And the room isn't a valuer. We don't give advice and we don't sign anything. Twenty-four people who've been wrong before tell you where a lot smells, and then you make the call. That distinction matters when the hammer falls.</p>
+    <h2 class="room__h2">Twenty-four people, and we interview every one of them.</h2>
+    <p class="room__lead">Members come from banking, medicine, professional sport, the trades and full-time property. Some have been buying at auction for twenty years. Some bought their first lot after joining.</p>
+    <p class="room__body">What they have in common is that they are all actually transacting. Nobody is watching from the sidelines, nobody is here to sell you anything, and nobody guards their deals. Members openly discuss properties they're interested in, because the room is worth more to them than any single lot.</p>
+    <p class="room__body room__body">Trust is the currency here. It only works because we're careful about who comes in, and because the moment the room gets bigger than twenty-four, your lot stops getting looked at properly. That is the entire product, so the cap doesn't move.</p>
   </div>
 </section>
 
@@ -837,8 +800,8 @@ q{
   <div class="inc-items">
     <div class="inc-item">
       <h3>Deal review calls</h3>
-      <p>Bring your lots, get a straight answer, hear everyone else's. Ten to fifteen worked through, one at a time. Recorded.</p>
-      <span class="inc-stamp">Twice a week &middot; Tue + Thu</span>
+      <p>Bring your lots, get a straight answer, hear everyone else's. Ten to fifteen worked through, one at a time.</p>
+      <span class="inc-stamp">Twice a week &middot; over 1,000 lots a year</span>
     </div>
     <div class="inc-item">
       <h3>Direct access to Jay &amp; Piotr</h3>
@@ -853,22 +816,22 @@ q{
     <div class="inc-item">
       <h3>Boardroom day</h3>
       <p>A full day in person in Central London with invited guests. Troubleshooting, industry insight, and the conversations that don't happen on Zoom.</p>
-      <span class="inc-stamp">Every quarter</span>
+      <span class="inc-stamp">Every quarter &middot; &pound;100 + VAT supplement per meeting, at cost</span>
     </div>
     <div class="inc-item">
       <h3>Roma Finance hunter's facility</h3>
-      <p>A finance facility open only to club members, through a broker who buys and sells at auction himself.</p>
+      <p>Available to club members only, subject to underwriting — through a broker who buys and sells at auction himself.</p>
       <span class="inc-stamp">On demand &middot; exclusive to ABC</span>
     </div>
     <div class="inc-item">
       <h3>The tools</h3>
       <p>On-demand recording of our two-day auction workshop, maximum bid calculator, stamp duty formula, and the rest of what we use ourselves.</p>
-      <span class="inc-stamp">On demand</span>
+      <span class="inc-stamp">On demand &middot; plus 25% longer EIG subscription</span>
     </div>
     <div class="inc-item">
       <h3>Our professional network</h3>
       <p>Solicitors, architects, planning consultants, surveyors, accountants. People we use, not a directory we compiled.</p>
-      <span class="inc-stamp">On demand</span>
+      <span class="inc-stamp">On demand &middot; plus member rates on live events and the annual retreat</span>
     </div>
   </div>
 
@@ -903,7 +866,7 @@ q{
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="M15.4 15.4l4.1 4.1"/><path d="M8.2 9.6h5.2M8.2 12.4h3.4"/></svg>
       </div>
       <h3 class="ledger-row__h3">You do your homework</h3>
-      <p class="ledger-row__p">Read the legal pack. Go through the catalogues. Research your own lots. We'll give you an honest read on any property — we won't do it for you.</p>
+      <p class="ledger-row__p">Go through the catalogues. Turn up. Research your own lots. We'll give you an honest read on any property — we won't do it for you.</p>
     </div>
     <div class="ledger-row">
       <div class="ledger-row__icon">
@@ -964,6 +927,7 @@ q{
 <section class="apply" id="apply">
   <div class="apply__grid">
     <div>
+      <div class="apply__tag">Places available, by interview only</div>
       <h2 class="apply__h2">Apply for a place.</h2>
       <p class="apply__lead">Membership is capped at twenty-four and every application goes through an interview. If it isn't right for you we'll say so.</p>
       <p class="apply__note">We don't publish the fee. Not to be coy, but because a number on its own tells you nothing about whether this is worth it. We'd rather show you what happens in the room first, then talk about money on the call.</p>
@@ -975,16 +939,16 @@ q{
       </div>
       <div class="field"><label for="em">Email</label><input type="email" id="em" name="email" autocomplete="email"></div>
       <div class="field"><label for="qs">Where are you buying, and how many lots a year?</label><textarea id="qs" name="question" rows="4"></textarea></div>
-      <a class="btn btn--gold" href="https://form.getformly.com/f/aOt5IQ?src=apply" target="_blank" rel="noopener" style="justify-self:start;margin-top:8px">Submit application &rarr;</a>
-      <p class="form__small">We'll come back to you within two working days. Everything you tell us stays between you, Jay and Piotr. Form not loading? <a href="https://form.getformly.com/f/aOt5IQ?src=apply" target="_blank" rel="noopener" style="color:rgba(255,255,255,.6)">Open it in a new tab.</a></p>
+      <a class="btn btn--gold" href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener" style="justify-self:start;margin-top:8px">Submit application &rarr;</a>
+      <p class="form__small">We'll come back to you within two working days. Everything you tell us stays between you, Jay and Piotr.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
-  <span>Auction Buyers Club &middot; Run by Hammered Auctions &middot; Established 2020</span>
-  <span><a href="https://form.getformly.com/f/aOt5IQ?src=footer" target="_blank" rel="noopener">Apply for membership</a></span>
+  <span>Auction Buyers Club &middot; Created by HAMMERED &middot; Established 2020</span>
+  <span><a href="https://form.getformly.com/f/aOt5IQ" target="_blank" rel="noopener">Apply for membership</a></span>
 </footer>
 
 </div>
